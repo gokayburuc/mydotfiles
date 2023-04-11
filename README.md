@@ -1,5 +1,6 @@
 # GOKAYBURUC'S NEOVIM DOTFILES 
 
+![Neovim](img/neovim.jpeg)
 
 Here is my NEOVIM Configurations using Lua. 
 
