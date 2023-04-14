@@ -3,11 +3,11 @@ vim.g.loaded_netrwPlugin = 1 -- explore plugin settings
 
 vim.opt.termguicolors = true -- termguicolor support
 
--- require("nvim-tree").setup({
---   view = {
---     adaptive_size = true
---   }
--- })
+require("nvim-tree").setup({
+  view = {
+    adaptive_size = true
+  }
+})
 
 -- vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
 

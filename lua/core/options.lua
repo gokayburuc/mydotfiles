@@ -22,3 +22,17 @@ vim.wo.number         = true
 -- Relative Numbers
 vim.wo.relativenumber = true
 
+-- gui colors
+vim.opt.termguicolors = true
+
+-- search 
+vim.opt.hlsearch      = true
+vim.opt.incsearch     = true
+
+-- indent 
+vim.opt.smartindent   = true
+
+-- case 
+vim.opt.smartcase     = true
+vim.opt.ignorecase    = true
+

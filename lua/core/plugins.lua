@@ -31,6 +31,8 @@ return require('packer').startup(function(use)
     -- nvim-tree 
     use  'nvim-tree/nvim-tree.lua'
     use  'nvim-tree/nvim-web-devicons'
+
+
     -- tpope plugins 
     use  'tpope/vim-fugitive'
 
@@ -75,16 +77,14 @@ return require('packer').startup(function(use)
             {'onsails/lspkind.nvim'}
         }
     }
-    use {'jiangmiao/auto-pairs'} 
-    use {'iamcco/markdown-preview.nvim'}
-    -- use {
-    --     'windwp/nvim-autopairs',
-    --     config = function() require("nvim-autopairs").setup {} end
-    -- }
 
-    -- use 'onsails/lspkind.nvim' -- lskpind pictograms
+    -- Auto Pairs 
+    use {'jiangmiao/auto-pairs'} -- autopairs
 
+    -- Bufferline
     use 'akinsho/nvim-bufferline.lua' --bufferline  
+
+    -- Harpoon 
     use 'ThePrimeagen/harpoon' -- harpoon setup 
 
     -- rainbow csv
@@ -106,6 +106,12 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
     -- solarized 
     use ('Tsuzat/NeoSolarized.nvim')
+
+    -- LSP fuzzy finder 
+    use {'ojroques/nvim-lspfuzzy'}
+
+    -- MARKDOWN PREVIEW
+    use {'davidgranstrom/nvim-markdown-preview'}
 
 
   if packer_bootstrap then
