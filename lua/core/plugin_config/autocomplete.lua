@@ -20,6 +20,20 @@ cmp.setup({
     sources = cmp.config.sources({
         {name = 'nvim_lsp'},
         {name = 'buffer'},
+        {name = 'luasnip'},
+        {name = 'nvim_lsp_signature_help'},
+        {name = 'nvim_lsp_document_symbol'}
     })
 })
 
+
+cmp.setup.cmdline('/', {
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp_document_symbol' }
+  }, {
+    { name = 'buffer' }
+  })
+})
+
+
+}
