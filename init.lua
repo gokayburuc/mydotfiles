@@ -19,3 +19,5 @@ require("core.plugin_config.lspkind")
 require("core.plugin_config.lsp_config")
 require("core.plugin_config.autocomplete")
 
+-- Aerial 
+require('core.plugin_config.aerial')

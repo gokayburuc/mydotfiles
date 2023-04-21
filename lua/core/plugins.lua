@@ -82,6 +82,13 @@ return require('packer').startup(function(use)
         }
     }
 
+    --kanagawaw colorscheme
+    use {"rebelot/kanagawa.nvim"}
+
+    use {'stevearc/aerial.nvim'} -- aerial
+
+    -- autopep8 
+    use {'tell-k/vim-autopep8'} -- autopep8 
 
     -- Auto Pairs 
     use {'jiangmiao/auto-pairs'} -- autopairs
