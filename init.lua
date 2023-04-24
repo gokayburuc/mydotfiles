@@ -25,3 +25,4 @@ require('core.plugin_config.aerial')
 
 -- snippets 
 require('core.plugin_config.snippets')
+

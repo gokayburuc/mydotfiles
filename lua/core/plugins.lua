@@ -9,6 +9,7 @@ local ensure_packer = function()
     return false
 end
 
+
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
@@ -81,6 +82,21 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lsp-document-symbol'}
         }
     }
+
+    -- arctic 
+    use {"rockyzhang24/arctic.nvim", requires = {"rktjmp/lush.nvim"}}
+
+    -- abstract 
+    use 'Abstract-IDE/Abstract-cs'
+
+    -- neon colorscheme
+    use "rafamadriz/neon"
+
+    -- sonokai colorscheme
+    use "sainnhe/sonokai"
+
+    -- deus colorscheme
+    use 'theniceboy/nvim-deus'
 
     --kanagawaw colorscheme
     use {"rebelot/kanagawa.nvim"}

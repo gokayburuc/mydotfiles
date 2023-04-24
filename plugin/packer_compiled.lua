@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Abstract-cs"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/Abstract-cs",
+    url = "https://github.com/Abstract-IDE/Abstract-cs"
+  },
   ["Comment.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0" },
     loaded = true,
@@ -94,6 +99,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
+  },
+  ["arctic.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/arctic.nvim",
+    url = "https://github.com/rockyzhang24/arctic.nvim"
   },
   ["auto-pairs"] = {
     loaded = true,
@@ -175,6 +185,11 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -190,6 +205,11 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
   },
+  neon = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/neon",
+    url = "https://github.com/rafamadriz/neon"
+  },
   neovim = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/neovim",
@@ -204,6 +224,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-deus"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/nvim-deus",
+    url = "https://github.com/theniceboy/nvim-deus"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -254,6 +279,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/rainbow_csv",
     url = "https://github.com/mechatroner/rainbow_csv"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   },
   ["telescope.nvim"] = {
     loaded = true,
