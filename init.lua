@@ -21,3 +21,7 @@ require("core.plugin_config.autocomplete")
 
 -- Aerial 
 require('core.plugin_config.aerial')
+
+
+-- snippets 
+require('core.plugin_config.snippets')
