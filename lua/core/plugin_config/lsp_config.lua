@@ -18,6 +18,8 @@ require("lspconfig").pylsp.setup         { capabilities = capabilities }
 require("lspconfig").yamlls.setup        { capabilities = capabilities }
 require("lspconfig").yamlls.setup        { capabilities = capabilities }
 require("lspconfig").tsserver.setup      { capabilities = capabilities }
+require("lspconfig").tailwindcss.setup   { capabilities = capabilities }
+
 
 -- require("lspconfig").jsonlint.setup      { capabilities=capabilities }
 
