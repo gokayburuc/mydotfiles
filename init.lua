@@ -3,6 +3,7 @@
 require('core.options')
 require('core.plugins')
 require('core.keymaps')
+require('core.plugin_config.neo_solarized')
 
 --PLUGINS 
 require("core.plugin_config.lualine")
@@ -25,4 +26,4 @@ require('core.plugin_config.aerial')
 
 -- snippets 
 require('core.plugin_config.snippets')
-
+require('core.plugin_config.peek')

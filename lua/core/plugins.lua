@@ -83,6 +83,9 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- markdown preview
+    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+
     -- arctic 
     use {"rockyzhang24/arctic.nvim", requires = {"rktjmp/lush.nvim"}}
 
