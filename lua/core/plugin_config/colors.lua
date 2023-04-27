@@ -1,5 +1,6 @@
 function ColorMe(color)
     color = color or "NeoSolarized"  -- color variable 
+    -- color = color or "rose-pine"  -- color variable 
     vim.cmd.colorscheme(color)
 
     -- TRANSPARENT BACKGROUND
