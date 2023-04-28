@@ -295,6 +295,11 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["the-matrix.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/the-matrix.nvim",
+    url = "https://github.com/luisiacc/the-matrix.nvim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -319,6 +324,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-jimbothemes"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/vim-jimbothemes",
+    url = "https://github.com/i3d/vim-jimbothemes"
   }
 }
 

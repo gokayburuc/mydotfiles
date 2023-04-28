@@ -9,7 +9,6 @@ local ensure_packer = function()
     return false
 end
 
-
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
@@ -82,6 +81,12 @@ return require('packer').startup(function(use)
             {'hrsh7th/cmp-nvim-lsp-document-symbol'}
         }
     }
+
+    -- vim-jimbothemes colorscheme
+    use ('i3d/vim-jimbothemes')
+
+    --  matrix colorscheme
+    use ('luisiacc/the-matrix.nvim')
 
     -- markdown preview
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })

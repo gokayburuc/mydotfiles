@@ -40,7 +40,6 @@ vim.opt.ignorecase    = true
 vim.opt.splitright    = true
 vim.opt.splitbelow    = true
 
-
 -- cursor 
 vim.opt.cursorline    = true
 
