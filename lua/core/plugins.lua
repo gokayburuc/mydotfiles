@@ -82,6 +82,22 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- catpuccin colorscheme
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    -- If you are using Packer
+    use 'shaunsingh/nord.nvim'
+
+    -- cobalt2 colorscheme 
+    use {
+        'lalitmee/cobalt2.nvim',
+        requires = 'tjdevries/colorbuddy.nvim'
+    }
+
+    -- jellybeans colorscheme 
+    use { 'rktjmp/lush.nvim'}
+    use { 'metalelf0/jellybeans-nvim' }
+
     -- vim-jimbothemes colorscheme
     use ('i3d/vim-jimbothemes')
 

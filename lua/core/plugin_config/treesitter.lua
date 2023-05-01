@@ -7,7 +7,6 @@ require'nvim-treesitter.configs'.setup {
       "vimdoc",
       "query",
       "javascript",
-      "python",
       "typescript",
       "rust",
       "markdown",

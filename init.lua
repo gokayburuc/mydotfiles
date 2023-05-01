@@ -3,6 +3,8 @@
 require('core.options')
 require('core.plugins')
 require('core.keymaps')
+
+-- neo_solarized colorscheme 
 require('core.plugin_config.neo_solarized')
 
 --PLUGINS 
@@ -10,6 +12,9 @@ require("core.plugin_config.lualine")
 require("core.plugin_config.nvim-tree")
 require("core.plugin_config.telescope")
 require("core.plugin_config.treesitter")
+
+
+-- TRANSPARENT COLORSCHEME 
 require("core.plugin_config.colors")
 
 -- Comments
@@ -23,7 +28,9 @@ require("core.plugin_config.autocomplete")
 -- Aerial 
 require('core.plugin_config.aerial')
 
-
 -- snippets 
 require('core.plugin_config.snippets')
 require('core.plugin_config.peek')
+
+-- harpoon 
+require("core.plugin_config.harpoon")

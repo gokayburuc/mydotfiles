@@ -1,7 +1,11 @@
 function ColorMe(color)
-    -- color = color or "NeoSolarized"  -- color variable 
-    color = color or "thematrix"  -- color variable 
-    -- color = color or "rose-pine"  -- color variable 
+    -- color = color or "NeoSolarized"
+    -- color = color or "gruvbox"  
+    -- color = color or "rose-pine"  
+    -- color = color or "jellybeans-nvim"
+    -- color = color or "nord"
+    color = color or 'material'
+
     vim.cmd.colorscheme(color)
 
     -- TRANSPARENT BACKGROUND
