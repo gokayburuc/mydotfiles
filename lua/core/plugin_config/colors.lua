@@ -1,10 +1,6 @@
 function ColorMe(color)
-    -- color = color or "NeoSolarized"
-    -- color = color or "gruvbox"  
-    -- color = color or "rose-pine"  
-    -- color = color or "jellybeans-nvim"
-    -- color = color or "nord"
-    color = color or 'material'
+    color = color or "NeoSolarized"
+    -- color = color or "nightwing"
 
     vim.cmd.colorscheme(color)
 

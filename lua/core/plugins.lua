@@ -82,45 +82,41 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- nightwing colorscheme
+    use { "jadnw/nightwing.nvim" }
+
     -- catpuccin colorscheme
     use { "catppuccin/nvim", as = "catppuccin" }
 
-    -- If you are using Packer
-    use 'shaunsingh/nord.nvim'
+    use 'shaunsingh/nord.nvim' -- nord colorscheme    
+    use "rafamadriz/neon" -- neon colorscheme 
 
-    -- cobalt2 colorscheme 
-    use {
-        'lalitmee/cobalt2.nvim',
-        requires = 'tjdevries/colorbuddy.nvim'
-    }
+    -- github colorscheme 
+    use ({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+    
+    -- melange colorscheme 
+    use "savq/melange-nvim"
+
+    -- monokai colorscheme 
+    use 'tanvirtin/monokai.nvim'
+
+    -- nordic colorscheme
+    use 'AlexvZyl/nordic.nvim'
+
+    use 'Yagua/nebulous.nvim'
+
+    use { "jadnw/gemstones.nvim" }
+
+    use "VDuchauffour/neodark.nvim"
+
+    use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
 
     -- jellybeans colorscheme 
     use { 'rktjmp/lush.nvim'}
     use { 'metalelf0/jellybeans-nvim' }
 
-    -- vim-jimbothemes colorscheme
-    use ('i3d/vim-jimbothemes')
-
-    --  matrix colorscheme
-    use ('luisiacc/the-matrix.nvim')
-
     -- markdown preview
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
-
-    -- arctic 
-    use {"rockyzhang24/arctic.nvim", requires = {"rktjmp/lush.nvim"}}
-
-    -- abstract 
-    use 'Abstract-IDE/Abstract-cs'
-
-    -- neon colorscheme
-    use "rafamadriz/neon"
-
-    -- sonokai colorscheme
-    use "sainnhe/sonokai"
-
-    -- deus colorscheme
-    use 'theniceboy/nvim-deus'
 
     --kanagawaw colorscheme
     use {"rebelot/kanagawa.nvim"}
