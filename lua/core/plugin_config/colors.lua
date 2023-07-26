@@ -7,6 +7,10 @@ function ColorMe(color)
     -- color = color or "gruvbox"
     -- color = color or "zephyr"
     -- color = color or "ayu"
+    -- color = color or "midnight"
+    -- color = color or "oxocarbon"
+    
+
     vim.o.background="dark"
     vim.cmd.colorscheme(color)
 

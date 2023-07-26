@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
@@ -200,10 +205,10 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/melange-nvim",
     url = "https://github.com/savq/melange-nvim"
   },
-  neovim = {
+  ["midnight.nvim"] = {
     loaded = true,
-    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/midnight.nvim",
+    url = "https://github.com/dasupradyumna/midnight.nvim"
   },
   ["neovim-ayu"] = {
     loaded = true,

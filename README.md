@@ -15,6 +15,8 @@
 - markdown-preview 
 - nvim-surround 
 - fugitive 
+- indent-blankline
+- 
 
 ## COLORSCHEMES 
 

@@ -130,9 +130,6 @@ return require('packer').startup(function(use)
     -- oh lucy colorscheme
     use 'yazeed1s/oh-lucy.nvim'
 
-    -- colorscheme : rose - pine
-    use ("rose-pine/neovim")
-
     -- dracula 
     use 'Mofiqul/dracula.nvim'
 
@@ -160,6 +157,12 @@ return require('packer').startup(function(use)
             })
         end
     })
+
+    -- indent-blankline 
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- midnight colorscheme
+    use 'dasupradyumna/midnight.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
