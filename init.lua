@@ -1,5 +1,4 @@
 -- CORE CONFIGURATIONS 
---
 
 require('core.options')
 require('core.plugins')
@@ -39,12 +38,7 @@ require("core.plugin_config.harpoon")
 require('core.plugin_config.colors')
 require'colorizer'.setup()
 
-
 -- bufferline 
 require('core.plugin_config.bufferline')
 
 
--- require("core.plugin_config.tokyonight")
--- require('core.plugin_config.rose_pine')
--- require('core.plugin_config.gruvbox')
--- require("core.plugin_config.catppuccin")

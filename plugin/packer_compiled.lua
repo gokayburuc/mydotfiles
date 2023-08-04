@@ -100,6 +100,11 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  ["balance-theme.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/balance-theme.nvim",
+    url = "https://github.com/MetriC-DT/balance-theme.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -134,6 +139,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["doom-one.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/doom-one.nvim",
+    url = "https://github.com/NTBBloodbath/doom-one.nvim"
   },
   ["dracula.nvim"] = {
     loaded = true,
@@ -210,6 +220,11 @@ _G.packer_plugins = {
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/midnight.nvim",
     url = "https://github.com/dasupradyumna/midnight.nvim"
   },
+  neon = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/neon",
+    url = "https://github.com/rafamadriz/neon"
+  },
   ["neovim-ayu"] = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/neovim-ayu",
@@ -265,6 +280,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/oh-lucy.nvim",
     url = "https://github.com/yazeed1s/oh-lucy.nvim"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/gokayburuc/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -329,14 +349,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
 -- Config for: nvim-surround
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
 time([[Config for nvim-surround]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

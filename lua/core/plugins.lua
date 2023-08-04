@@ -82,12 +82,9 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- AYU COLORSCHEME 
-    use {"Shatur/neovim-ayu"}
 
     -- colorizer - hex colors 
     use 'norcalli/nvim-colorizer.lua'
-
 
     -- melange colorscheme 
     use "savq/melange-nvim"
@@ -101,8 +98,6 @@ return require('packer').startup(function(use)
     -- markdown preview
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
-    --kanagawa colorscheme
-    use {"rebelot/kanagawa.nvim"}
 
     use {'stevearc/aerial.nvim'} -- aerial
 
@@ -127,14 +122,6 @@ return require('packer').startup(function(use)
     -- colorscheme : gruvbox
     use  'ellisonleao/gruvbox.nvim'
 
-    -- oh lucy colorscheme
-    use 'yazeed1s/oh-lucy.nvim'
-
-    -- dracula 
-    use 'Mofiqul/dracula.nvim'
-
-    -- colorscheme : toknonight
-    use 'folke/tokyonight.nvim'
     -- solarized 
     use ('Tsuzat/NeoSolarized.nvim')
 
@@ -163,6 +150,14 @@ return require('packer').startup(function(use)
 
     -- midnight colorscheme
     use 'dasupradyumna/midnight.nvim'
+
+    --one dark colorscheme
+    use 'navarasu/onedark.nvim'
+
+    use 'MetriC-DT/balance-theme.nvim'
+
+    -- neon colorscheme 
+    use "rafamadriz/neon"
 
     if packer_bootstrap then
         require('packer').sync()
