@@ -5,7 +5,7 @@ vim.opt.backspace     = '2'
 vim.opt.showcmd       = true
 vim.opt.laststatus    = 2
 vim.opt.autowrite     = true
-vim.opt.cursorline    = true
+vim.opt.cursorline    = false
 vim.opt.autoread      = true
 
 -- use spaces for tabs and whatnot
@@ -39,7 +39,4 @@ vim.opt.ignorecase    = true
 -- split 
 vim.opt.splitright    = true
 vim.opt.splitbelow    = true
-
--- cursor 
-vim.opt.cursorline    = true
 

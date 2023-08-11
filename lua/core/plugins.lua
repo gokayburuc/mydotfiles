@@ -111,7 +111,7 @@ return require('packer').startup(function(use)
     use 'akinsho/nvim-bufferline.lua' --bufferline  
 
     -- Harpoon 
-    use 'ThePrimeagen/harpoon' -- harpoon setup 
+    use 'ThePrimeagen/harpoon' 
 
     -- rainbow csv
     use 'mechatroner/rainbow_csv'
@@ -154,12 +154,65 @@ return require('packer').startup(function(use)
     --one dark colorscheme
     use 'navarasu/onedark.nvim'
 
+    -- balance colorscheme
     use 'MetriC-DT/balance-theme.nvim'
 
-    -- neon colorscheme 
+    -- NEON COLORSCHEME 
     use "rafamadriz/neon"
 
-    if packer_bootstrap then
-        require('packer').sync()
+    -- NORD COLORSCHEMe
+    use 'shaunsingh/nord.nvim'
+
+    -- NEBULOUS COLORSCHEME
+    use 'Yagua/nebulous.nvim'
+
+    -- monokai pro 
+    use {
+        "loctvl842/monokai-pro.nvim",
+        config = function()
+            require("monokai-pro").setup()
+        end
+    }
+    -- packer.nvim
+    use {"akinsho/horizon.nvim", tag = "*"}
+
+    -- arctic colorscheme
+    use {"rockyzhang24/arctic.nvim", requires = {"rktjmp/lush.nvim"}}
+
+    -- nova colorscheme 
+    use 'zanglg/nova.nvim'
+
+    use { "zootedb0t/citruszest.nvim" }
+
+    use "yorik1984/newpaper.nvim"
+
+    use "Alexis12119/nightly.nvim"
+
+    use 'mhartington/oceanic-next'
+
+    use { 'projekt0n/github-nvim-theme' }
+
+    -- sainnhe gruvbox material colorscheme 
+    use 'sainnhe/gruvbox-material'
+
+    -- SAINNHE SONOKAI COLORSCHEME 
+    use 'sainnhe/sonokai'
+
+    use 'maxmx03/fluoromachine.nvim'
+
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    use { 'kaiuri/nvim-juliana',
+    config = function()
+        require 'nvim-juliana'.setup { --[=[ configuration --]=] }
     end
+}
+    -- ONE DARKER COLORSCHEME
+    use 'AlphaTechnolog/onedarker.nvim'
+
+    use 'AxelGard/oneokai.nvim'
+
+if packer_bootstrap then
+    require('packer').sync()
+end
 end)

@@ -11,9 +11,6 @@ require("core.plugin_config.nvim-tree")
 require("core.plugin_config.telescope")
 require("core.plugin_config.treesitter")
 
--- TRANSPARENT COLORSCHEME 
--- require("core.plugin_config.colors")
-
 -- Comments
 require('Comment').setup()
 
@@ -36,7 +33,6 @@ require("core.plugin_config.harpoon")
 
 -- COLORS 
 require('core.plugin_config.colors')
-require'colorizer'.setup()
 
 -- bufferline 
 require('core.plugin_config.bufferline')
