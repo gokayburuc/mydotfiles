@@ -30,17 +30,19 @@ return require('packer').startup(function(use)
 
     -- nvim-tree 
     use  'nvim-tree/nvim-tree.lua'
-    use  'nvim-tree/nvim-web-devicons'
 
+    -- NVIM WEB DEVICONS 
+    use  'nvim-tree/nvim-web-devicons'
 
     -- tpope plugins 
     use  'tpope/vim-fugitive'
 
+    -- LUALINE
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    --comments 
+    --COMMENTS 
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -48,7 +50,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- undotree 
+    -- UNDOTREE 
     use 'mbbill/undotree'
 
     -- LSP & AUTOCOMPLETION
@@ -108,10 +110,10 @@ return require('packer').startup(function(use)
     use {'jiangmiao/auto-pairs'} -- autopairs
 
     -- Bufferline
-    use 'akinsho/nvim-bufferline.lua' --bufferline  
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- Harpoon 
-    use 'ThePrimeagen/harpoon' 
+    use 'ThePrimeagen/harpoon'
 
     -- rainbow csv
     use 'mechatroner/rainbow_csv'
@@ -120,7 +122,7 @@ return require('packer').startup(function(use)
     use 'marko-cerovac/material.nvim'
 
     -- colorscheme : gruvbox
-    use  'ellisonleao/gruvbox.nvim'
+    use 'ellisonleao/gruvbox.nvim'
 
     -- solarized 
     use ('Tsuzat/NeoSolarized.nvim')
@@ -207,10 +209,26 @@ return require('packer').startup(function(use)
         require 'nvim-juliana'.setup { --[=[ configuration --]=] }
     end
 }
-    -- ONE DARKER COLORSCHEME
-    use 'AlphaTechnolog/onedarker.nvim'
+-- ONE DARKER COLORSCHEME
+use 'AlphaTechnolog/onedarker.nvim'
 
-    use 'AxelGard/oneokai.nvim'
+-- ONEKAI COLORSCHEME
+use 'AxelGard/oneokai.nvim'
+
+use 'brenoprata10/nvim-highlight-colors'
+
+-- GOTHAM COLORSCHEME
+use 'whatyouhide/vim-gotham'
+
+-- KANAGAWA COLORSCHEME
+use 'rebelot/kanagawa.nvim'
+
+-- NIGHTFOX COLORSCHEME
+use 'EdenEast/nightfox.nvim'
+
+-- autotag 
+use 'windwp/nvim-ts-autotag'
+
 
 if packer_bootstrap then
     require('packer').sync()
