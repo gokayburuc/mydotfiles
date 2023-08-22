@@ -20,14 +20,16 @@
 
 ## COLORSCHEMES 
 
-- kanagawa 
-- tokyonight
-- gruvbox 
-- NeoSolarized 
-- oh-lucy 
-- ayu 
-- dracula 
-- melange 
-- material 
-- rose-pine
-- zephyr
+- [ ] kanagawa 
+- [ ] tokyonight
+- [ ] gruvbox 
+- [x] NeoSolarized 
+- [x] oh-lucy 
+- [x] ayu 
+- [ ] dracula 
+- [x] melange 
+- [ ] material 
+- [ ] rose-pine
+- [ ] zephyr
+- [ ] nord
+- [ ] abscs

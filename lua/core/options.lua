@@ -6,7 +6,7 @@ vim.opt.title        = true
 vim.opt.autoindent   = true
 vim.opt.ai           = true -- auto indent
 vim.opt.si           = true --
-vim.opt.wrap         = false
+vim.opt.wrap         = true
 
 vim.g.mapleader       = ' '
 vim.g.maplocalleader  = ' '

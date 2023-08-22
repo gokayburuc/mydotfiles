@@ -25,19 +25,19 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use 'jacoborus/tender.vim'
+
     use 'junegunn/vim-easy-align'
 
-    -- nvim-tree 
+    -- nvimtree 
     use  'nvim-tree/nvim-tree.lua'
 
-    -- NVIM WEB DEVICONS 
+    -- nvim web devicons 
     use  'nvim-tree/nvim-web-devicons'
 
     -- tpope plugins 
     use  'tpope/vim-fugitive'
 
-    -- LUALINE
+    -- lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -50,10 +50,10 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- UNDOTREE 
+    -- undotree 
     use 'mbbill/undotree'
 
-    -- LSP & AUTOCOMPLETION
+    -- lsp & autocompletion
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -100,12 +100,6 @@ return require('packer').startup(function(use)
     -- markdown preview
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
-
-    use {'stevearc/aerial.nvim'} -- aerial
-
-    -- autopep8 
-    use {'tell-k/vim-autopep8'} -- autopep8 
-
     -- Auto Pairs 
     use {'jiangmiao/auto-pairs'} -- autopairs
 
@@ -118,19 +112,15 @@ return require('packer').startup(function(use)
     -- rainbow csv
     use 'mechatroner/rainbow_csv'
 
-    -- Material Colorscheme 
-    use 'marko-cerovac/material.nvim'
-
-    -- colorscheme : gruvbox
+    -- gruvbox colorscheme
     use 'ellisonleao/gruvbox.nvim'
 
-    -- solarized 
+    -- solarized colorscheme
     use ('Tsuzat/NeoSolarized.nvim')
 
     -- LSP fuzzy finder 
     use {'ojroques/nvim-lspfuzzy'}
 
-    -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -150,23 +140,11 @@ return require('packer').startup(function(use)
     -- indent-blankline 
     use "lukas-reineke/indent-blankline.nvim"
 
-    -- midnight colorscheme
-    use 'dasupradyumna/midnight.nvim'
-
     --one dark colorscheme
     use 'navarasu/onedark.nvim'
 
-    -- balance colorscheme
-    use 'MetriC-DT/balance-theme.nvim'
-
-    -- NEON COLORSCHEME 
-    use "rafamadriz/neon"
-
-    -- NORD COLORSCHEMe
+    -- nord colorscheme
     use 'shaunsingh/nord.nvim'
-
-    -- NEBULOUS COLORSCHEME
-    use 'Yagua/nebulous.nvim'
 
     -- monokai pro 
     use {
@@ -175,60 +153,39 @@ return require('packer').startup(function(use)
             require("monokai-pro").setup()
         end
     }
-    -- packer.nvim
-    use {"akinsho/horizon.nvim", tag = "*"}
 
     -- arctic colorscheme
     use {"rockyzhang24/arctic.nvim", requires = {"rktjmp/lush.nvim"}}
 
-    -- nova colorscheme 
-    use 'zanglg/nova.nvim'
-
+    -- citruszest colorscheme 
     use { "zootedb0t/citruszest.nvim" }
 
-    use "yorik1984/newpaper.nvim"
-
-    use "Alexis12119/nightly.nvim"
-
-    use 'mhartington/oceanic-next'
-
+    -- github colorscheme 
     use { 'projekt0n/github-nvim-theme' }
 
-    -- sainnhe gruvbox material colorscheme 
-    use 'sainnhe/gruvbox-material'
-
-    -- SAINNHE SONOKAI COLORSCHEME 
-    use 'sainnhe/sonokai'
-
-    use 'maxmx03/fluoromachine.nvim'
-
+    -- catppuccin colorscheme 
     use { "catppuccin/nvim", as = "catppuccin" }
 
-    use { 'kaiuri/nvim-juliana',
-    config = function()
-        require 'nvim-juliana'.setup { --[=[ configuration --]=] }
-    end
-}
--- ONE DARKER COLORSCHEME
-use 'AlphaTechnolog/onedarker.nvim'
+    -- color highlight 
+    use 'brenoprata10/nvim-highlight-colors'
 
--- ONEKAI COLORSCHEME
-use 'AxelGard/oneokai.nvim'
+    -- kanagawa colorscheme
+    use 'rebelot/kanagawa.nvim'
 
-use 'brenoprata10/nvim-highlight-colors'
+    -- autotag 
+    use 'windwp/nvim-ts-autotag'
 
--- GOTHAM COLORSCHEME
-use 'whatyouhide/vim-gotham'
+    -- abstract colorscheme
+    use 'Abstract-IDE/Abstract-cs'
 
--- KANAGAWA COLORSCHEME
-use 'rebelot/kanagawa.nvim'
+    -- rose pine colorscheme
+    use 'rose-pine/neovim'
 
--- NIGHTFOX COLORSCHEME
-use 'EdenEast/nightfox.nvim'
+    -- dracula colorscheme
+    use 'Mofiqul/dracula.nvim'
 
--- autotag 
-use 'windwp/nvim-ts-autotag'
-
+    -- midnight colorscheme 
+    use 'dasupradyumna/midnight.nvim'
 
 if packer_bootstrap then
     require('packer').sync()
