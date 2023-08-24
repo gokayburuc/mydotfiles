@@ -1,12 +1,12 @@
 vim.cmd ("autocmd!")
-vim.scriptencoding   = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-vim.opt.encoding     = 'utf-8'
-vim.opt.title        = true
-vim.opt.autoindent   = true
-vim.opt.ai           = true -- auto indent
-vim.opt.si           = true --
-vim.opt.wrap         = true
+vim.scriptencoding    = 'utf-8'
+vim.opt.fileencoding  = 'utf-8'
+vim.opt.encoding      = 'utf-8'
+vim.opt.title         = true
+vim.opt.autoindent    = true
+vim.opt.ai            = true -- auto indent
+vim.opt.si            = true -- smart indent 
+vim.opt.wrap          = true
 
 vim.g.mapleader       = ' '
 vim.g.maplocalleader  = ' '
@@ -50,3 +50,10 @@ vim.opt.ignorecase    = true
 vim.opt.splitright    = true
 vim.opt.splitbelow    = true
 
+-- system clipboard settings 
+vim.opt.clipboard:append{'unnamedplus'}
+
+-- wildoptions and other settings 
+vim.opt.wildoptions   = 'pum' -- TODO: check this from internet 
+vim.opt.pumblend      = 5  -- TODO: check this from internet 
+vim.opt.winblend      = 0  -- TODO: check this from internet 

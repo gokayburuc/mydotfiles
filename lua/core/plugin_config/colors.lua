@@ -1,21 +1,8 @@
 function ColorMe(color)
+    -- color = color or "gruvbox"
     -- color = color or "NeoSolarized"
     color = color or "midnight"
-    -- color = color or "onedark"
-    -- color = color or "nord"
-    -- color = color or "arctic"
-    -- color = color or "gruvbox"
-    -- color = color or "github_dark"
-    -- color = color or "zephyr"
-    -- color = color or "kanagawa"
-    -- color = color or "gruvbox"
-    -- color = color or "dracula"
-    -- color = color or "abscs"
-    -- color = color or "citruszest"
-    -- color = color or "melange"
-    -- color = color or "rose-pine-moon"
-
-
+    -- FIXME: auto select day or night 
     -- vim.o.background="light"
     vim.o.background="dark"
     vim.cmd.colorscheme(color)

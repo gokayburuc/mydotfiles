@@ -187,6 +187,20 @@ return require('packer').startup(function(use)
     -- midnight colorscheme 
     use 'dasupradyumna/midnight.nvim'
 
+    -- todo comments 
+    use {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    }
+
+    -- folke zen mode 
+    use 'folke/zen-mode.nvim'
+
 if packer_bootstrap then
     require('packer').sync()
 end

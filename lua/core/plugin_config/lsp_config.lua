@@ -6,7 +6,16 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lconf = require "lspconfig"
 
 -- LUA 
-lconf.lua_ls.setup        { capabilities = capabilities }
+lconf.lua_ls.setup        { capabilities = capabilities,
+settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+
+}
 
 -- GO 
 lconf.gopls.setup         { capabilities = capabilities }

@@ -41,3 +41,5 @@ require('nvim-highlight-colors').setup {}
 -- autotag 
 require('nvim-ts-autotag').setup()
 
+
+require("todo-comments").setup{}
