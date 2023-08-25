@@ -33,13 +33,14 @@ require("core.plugin_config.harpoon")
 require('core.plugin_config.colors')
 
 -- bufferline 
-require("bufferline").setup{}
+require("bufferline").setup{
+
+}
 
 -- highlight colors
 require('nvim-highlight-colors').setup {}
 
 -- autotag 
 require('nvim-ts-autotag').setup()
-
 
 require("todo-comments").setup{}

@@ -7,3 +7,9 @@ vim.keymap.set('n','<leader><F4>', ':w<CR>:!go run %<CR>')
 
 -- Todo.nvim 
 vim.keymap.set('n','<leader><F6>', ':TodoTelescope <CR>')
+
+
+-- FIXME: run any file with one key 
+-- PYTHON 
+vim.keymap.set('n','<leader><F7>', ':w<CR>:!python3 %<CR>')
+

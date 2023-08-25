@@ -26,7 +26,7 @@ vim.opt.expandtab     = true
 
 vim.cmd [[ set noswapfile ]]
 
---Line numbers
+--line numbers
 vim.wo.number         = true
 
 -- Relative Numbers
@@ -54,6 +54,6 @@ vim.opt.splitbelow    = true
 vim.opt.clipboard:append{'unnamedplus'}
 
 -- wildoptions and other settings 
-vim.opt.wildoptions   = 'pum' -- TODO: check this from internet 
-vim.opt.pumblend      = 5  -- TODO: check this from internet 
-vim.opt.winblend      = 0  -- TODO: check this from internet 
+vim.opt.wildoptions   = 'pum' -- TODO: check this from internet
+vim.opt.pumblend      = 5  -- TODO:    check this from internet
+vim.opt.winblend      = 0  -- TODO:    check this from internet

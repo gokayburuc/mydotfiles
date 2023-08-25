@@ -55,5 +55,4 @@ lconf.taplo.setup         { capabilities = capabilities }
 -- XML
 lconf.lemminx.setup       { capabilities = capabilities }
 
-
 require("luasnip.loaders.from_vscode").lazy_load()
