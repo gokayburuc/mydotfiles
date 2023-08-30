@@ -2,21 +2,23 @@
 
 ## PLUGINS
 
-- packer.nvim 
-- nvim-tree
-- mason
-- telescope 
-- lualine 
-- bufferline 
-- nvim-treesitter 
-- nvim-web-devicons 
-- harpoon 
-- autopairs
-- markdown-preview 
-- nvim-surround 
-- fugitive 
-- indent-blankline
-- 
+- [x] packer.nvim 
+- [x] nvim-tree
+- [x] mason
+- [x] telescope 
+- [x] lualine 
+- [x] bufferline 
+- [x] nvim-treesitter 
+- [x] nvim-web-devicons 
+- [x] harpoon 
+- [x] autopairs
+- [x] markdown-preview 
+- [x] nvim-surround 
+- [x] fugitive 
+- [x] indent-blankline
+- [x] folke/zen-mode 
+- [x] "mhartington/formatter.nvim"
+
 
 ## COLORSCHEMES 
 
@@ -32,4 +34,4 @@
 - [ ] rose-pine
 - [ ] zephyr
 - [ ] nord
-- [ ] abscs
+- [x] abscs
