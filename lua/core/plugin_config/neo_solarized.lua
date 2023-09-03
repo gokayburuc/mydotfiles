@@ -35,3 +35,13 @@ NeoSolarized.setup {
 --         set background      = dark
 --     endtry
 -- ]]
+--
+
+vim.cmd [[
+   try
+        colorscheme NeoSolarized
+    catch /^Vim\%((\a\+)\)\ = :E18o
+        colorscheme default
+        set background      = dark
+    endtry
+]]

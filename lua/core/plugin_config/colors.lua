@@ -1,7 +1,11 @@
 function ColorMe(color)
     -- color = color or "gruvbox"
+    -- color = color or "arctic"
     -- color = color or "NeoSolarized"
     color = color or "midnight"
+    -- color = color or "github_dark_tritanopia"
+    -- color = color or "nord"
+    -- color = color or "dracula"
     
     -- FIXME: auto select day or night 
     -- vim.o.background="light"

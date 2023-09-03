@@ -110,8 +110,27 @@ return require("packer").startup(function(use)
 	-- Harpoon
 	use("ThePrimeagen/harpoon")
 
-	-- rainbow csv
-	use("mechatroner/rainbow_csv")
+	--rainbow csv
+	use({
+		"cameron-wags/rainbow_csv.nvim",
+		config = function()
+			require("rainbow_csv").setup()
+		end,
+		-- optional lazy-loading below
+		module = {
+			"rainbow_csv",
+			"rainbow_csv.fns",
+		},
+		ft = {
+			"csv",
+			"tsv",
+			"csv_semicolon",
+			"csv_whitespace",
+			"csv_pipe",
+			"rfc_csv",
+			"rfc_semicolon",
+		},
+	})
 
 	-- gruvbox colorscheme
 	use("ellisonleao/gruvbox.nvim")
@@ -194,16 +213,25 @@ return require("packer").startup(function(use)
 	use({
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-		},
+		opts = {},
 	})
 
 	-- folke zen mode
 	use("folke/zen-mode.nvim")
-    
 
-    -- formatter 
+	-- formatter
 	use({ "mhartington/formatter.nvim" })
+
+	-- cmdline
+	use({
+		"VonHeikemen/fine-cmdline.nvim",
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+		},
+	})
+
+	-- nvim notify
+	use("rcarriga/nvim-notify")
 
 	if packer_bootstrap then
 		require("packer").sync()

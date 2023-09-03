@@ -57,3 +57,6 @@ vim.opt.clipboard:append{'unnamedplus'}
 vim.opt.wildoptions   = 'pum' -- TODO: check this from internet
 vim.opt.pumblend      = 5  -- TODO:    check this from internet
 vim.opt.winblend      = 0  -- TODO:    check this from internet
+
+-- rainbow 
+
