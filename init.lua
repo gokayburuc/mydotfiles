@@ -45,7 +45,5 @@ require("todo-comments").setup({})
 -- FORMATTER
 require("core.plugin_config.formatter")
 
-require("notify")
-
--- neo solarized 
+-- neo solarized
 -- require('core.plugin_config.neo_solarized')

@@ -89,9 +89,6 @@ return require("packer").startup(function(use)
 	-- colorizer - hex colors
 	use("norcalli/nvim-colorizer.lua")
 
-	-- melange colorscheme
-	use("savq/melange-nvim")
-
 	-- zephyr colorscheme
 	use({
 		"glepnir/zephyr-nvim",
@@ -179,20 +176,15 @@ return require("packer").startup(function(use)
 	-- arctic colorscheme
 	use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
 
-	-- citruszest colorscheme
-	use({ "zootedb0t/citruszest.nvim" })
 
 	-- github colorscheme
 	use({ "projekt0n/github-nvim-theme" })
 
-	-- catppuccin colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" })
+
 
 	-- color highlight
 	use("brenoprata10/nvim-highlight-colors")
 
-	-- kanagawa colorscheme
-	use("rebelot/kanagawa.nvim")
 
 	-- autotag
 	use("windwp/nvim-ts-autotag")
@@ -200,8 +192,6 @@ return require("packer").startup(function(use)
 	-- abstract colorscheme
 	use("Abstract-IDE/Abstract-cs")
 
-	-- rose pine colorscheme
-	use("rose-pine/neovim")
 
 	-- dracula colorscheme
 	use("Mofiqul/dracula.nvim")
@@ -221,17 +211,6 @@ return require("packer").startup(function(use)
 
 	-- formatter
 	use({ "mhartington/formatter.nvim" })
-
-	-- cmdline
-	use({
-		"VonHeikemen/fine-cmdline.nvim",
-		requires = {
-			{ "MunifTanjim/nui.nvim" },
-		},
-	})
-
-	-- nvim notify
-	use("rcarriga/nvim-notify")
 
 	if packer_bootstrap then
 		require("packer").sync()

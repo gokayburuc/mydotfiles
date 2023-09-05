@@ -56,6 +56,5 @@ require("formatter").setup({
 -- augroup END
 
 -- FIXME: formatter keys
---
 -- nnoremap <silent> <leader>f :Format<CR>
 -- nnoremap <silent> <leader>F :FormatWrite<CR>
