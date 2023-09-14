@@ -1,4 +1,4 @@
-local mark = require("harpoon.mark")har
+local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
 -- visual mode
