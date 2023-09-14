@@ -176,22 +176,17 @@ return require("packer").startup(function(use)
 	-- arctic colorscheme
 	use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
 
-
 	-- github colorscheme
 	use({ "projekt0n/github-nvim-theme" })
 
-
-
 	-- color highlight
 	use("brenoprata10/nvim-highlight-colors")
-
 
 	-- autotag
 	use("windwp/nvim-ts-autotag")
 
 	-- abstract colorscheme
 	use("Abstract-IDE/Abstract-cs")
-
 
 	-- dracula colorscheme
 	use("Mofiqul/dracula.nvim")
@@ -211,6 +206,26 @@ return require("packer").startup(function(use)
 
 	-- formatter
 	use({ "mhartington/formatter.nvim" })
+
+	-- one half colorscheme
+	use("sonph/onehalf")
+
+	-- deus
+	use("ajmwagar/vim-deus")
+
+	-- melange
+	use("savq/melange-nvim")
+
+	--
+	use("tyrannicaltoucan/vim-quantum")
+
+	use("tyrannicaltoucan/vim-deep-space")
+
+	use("noahfrederick/vim-hemisu")
+
+	use("Alexis12119/nightly.nvim")
+
+	use("ray-x/material_plus.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

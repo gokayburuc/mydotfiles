@@ -39,7 +39,7 @@ lconf.bashls.setup        { capabilities = capabilities }
 
 -- PYTHON 
 lconf.pylsp.setup         { capabilities = capabilities }
--- lconf.jedi_language_server.setup         { capabilities = capabilities }
+lconf.ruff_lsp.setup         { capabilities = capabilities }
 
 -- YAML 
 lconf.yamlls.setup        { capabilities = capabilities }

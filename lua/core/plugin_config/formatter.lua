@@ -39,6 +39,14 @@ require("formatter").setup({
 			end,
 		},
 
+		python = {
+			require("formatter.filetypes.python").autopep8,
+		},
+
+		go = {
+			require("formatter.filetypes.go").gofmt,
+		},
+
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
 		["*"] = {
