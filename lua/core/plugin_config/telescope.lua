@@ -1,6 +1,6 @@
 local builtin = require("telescope.builtin")
 
--- telescope
+-- telescope keymaps
 vim.keymap.set("n", "<c-f>", builtin.find_files, {})
 vim.keymap.set("n", "<Space>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
@@ -15,5 +15,5 @@ vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
 -- vim.keymap.set('n', '<leader>fc',  builtin.commands,          {})
 -- vim.keymap.set('n', '<leader>fc',  builtin.commands,          {})
 -- vim.keymap.set('n', '<leader>fc',  builtin.commands,          {})
---
---
+
+require('telescope').load_extension('dap')

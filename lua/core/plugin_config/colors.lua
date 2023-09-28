@@ -1,15 +1,14 @@
 function ColorMe(color)
 	-- color = color or "gruvbox"
+	-- color = color or "leeward"
 	-- color = color or "arctic"
-	-- color = color or "nightly"
-	-- color = color or "moonlight"
-	-- color = color or "hemisu"
-	-- color = color or "deus"
-	-- color = color or "quantum"
-	color = color or "NeoSolarized"
-	-- color = color or "midnight"
+	-- color = color or "NeoSolarized"
+	-- color = color or "newpaper"
+	-- color = color or "nordic"
+	-- color = color or "tokyonight-night"
+	-- color = color or "thematrix"
+	color = color or "midnight"
 	-- color = color or "zephyr"
-	-- color = color or "github_dark_tritanopia"
 	-- color = color or "nord"
 	-- color = color or "dracula"
 
@@ -20,8 +19,8 @@ function ColorMe(color)
 
 	-- FIXME: colorscheme transparency
 	-- TRANSPARENT BACKGROUND
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 ColorMe()

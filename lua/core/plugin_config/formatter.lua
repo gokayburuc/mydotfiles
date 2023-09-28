@@ -46,6 +46,12 @@ require("formatter").setup({
 		go = {
 			require("formatter.filetypes.go").gofmt,
 		},
+        markdown = {
+            require("formatter.filetypes.markdown").rustywind,
+        },
+        html = {
+            require("formatter.filetypes.html").rustywind,
+        },
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype

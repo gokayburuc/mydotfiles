@@ -22,12 +22,21 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
-		-- or                            , branch = '0.1.x',
+		tag = "0.1.3",
+		-- or , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	-- telescope file browser
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	})
 
-	--
+    -- DAP 
+    use "mfussenegger/nvim-dap"
+
+    use "nvim-telescope/telescope-dap.nvim"
+
 	use("junegunn/vim-easy-align")
 
 	-- nvimtree
@@ -51,6 +60,7 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+
 
 	-- undotree
 	use("mbbill/undotree")
@@ -107,36 +117,10 @@ return require("packer").startup(function(use)
 	-- Harpoon
 	use("ThePrimeagen/harpoon")
 
-	--rainbow csv
-	use({
-		"cameron-wags/rainbow_csv.nvim",
-		config = function()
-			require("rainbow_csv").setup()
-		end,
-		-- optional lazy-loading below
-		module = {
-			"rainbow_csv",
-			"rainbow_csv.fns",
-		},
-		ft = {
-			"csv",
-			"tsv",
-			"csv_semicolon",
-			"csv_whitespace",
-			"csv_pipe",
-			"rfc_csv",
-			"rfc_semicolon",
-		},
-	})
-
-	-- gruvbox colorscheme
-	use("ellisonleao/gruvbox.nvim")
-
-	-- solarized colorscheme
-	use("Tsuzat/NeoSolarized.nvim")
-
 	-- LSP fuzzy finder
 	use({ "ojroques/nvim-lspfuzzy" })
+
+	use("nvimdev/lspsaga.nvim")
 
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -159,40 +143,13 @@ return require("packer").startup(function(use)
 	-- indent-blankline
 	use("lukas-reineke/indent-blankline.nvim")
 
-	--one dark colorscheme
-	use("navarasu/onedark.nvim")
-
-	-- nord colorscheme
-	use("shaunsingh/nord.nvim")
-
-	-- monokai pro
-	use({
-		"loctvl842/monokai-pro.nvim",
-		config = function()
-			require("monokai-pro").setup()
-		end,
-	})
-
-	-- arctic colorscheme
-	use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
-
-	-- github colorscheme
-	use({ "projekt0n/github-nvim-theme" })
-
 	-- color highlight
 	use("brenoprata10/nvim-highlight-colors")
 
 	-- autotag
 	use("windwp/nvim-ts-autotag")
 
-	-- abstract colorscheme
-	use("Abstract-IDE/Abstract-cs")
-
-	-- dracula colorscheme
-	use("Mofiqul/dracula.nvim")
-
 	-- midnight colorscheme
-	use("dasupradyumna/midnight.nvim")
 
 	-- todo comments
 	use({
@@ -207,25 +164,35 @@ return require("packer").startup(function(use)
 	-- formatter
 	use({ "mhartington/formatter.nvim" })
 
-	-- one half colorscheme
-	use("sonph/onehalf")
+	-- color
+	use("tjdevries/colorbuddy.nvim")
 
-	-- deus
-	use("ajmwagar/vim-deus")
+	use("folke/trouble.nvim")
 
-	-- melange
+	use("lewis6991/gitsigns.nvim")
+	use("rcarriga/nvim-notify")
+
+	-- COLORSCHEMES
+	use("metalelf0/jellybeans-nvim")
+	use("rafamadriz/neon")
 	use("savq/melange-nvim")
-
-	--
-	use("tyrannicaltoucan/vim-quantum")
-
-	use("tyrannicaltoucan/vim-deep-space")
-
-	use("noahfrederick/vim-hemisu")
-
-	use("Alexis12119/nightly.nvim")
-
-	use("ray-x/material_plus.nvim")
+	use("edmondburnett/leeward.nvim")
+	use("rebelot/kanagawa.nvim")
+	use("Mofiqul/adwaita.nvim")
+	use("Yagua/nebulous.nvim")
+	use("Mofiqul/dracula.nvim")
+	use("marko-cerovac/material.nvim")
+	use("heraldofsolace/nisha-vim")
+	use("yorik1984/newpaper.nvim")
+	use("AlexvZyl/nordic.nvim")
+	use("gbprod/nord.nvim")
+	use("folke/tokyonight.nvim")
+	use("luisiacc/the-matrix.nvim")
+	use("numToStr/Sakura.nvim")
+	use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
+	use("dasupradyumna/midnight.nvim")
+	use("Tsuzat/NeoSolarized.nvim")
+	use("ellisonleao/gruvbox.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

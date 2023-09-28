@@ -15,7 +15,7 @@ require("Comment").setup()
 
 -- LSP
 require("core.plugin_config.lspkind")
-require("core.plugin_config.lsp_config")
+require("core.plugin_config.mason_config")
 require("core.plugin_config.autocomplete")
 
 -- snippets
@@ -45,5 +45,4 @@ require("todo-comments").setup({})
 -- FORMATTER
 require("core.plugin_config.formatter")
 
--- neo solarized
--- require('core.plugin_config.neo_solarized')
+

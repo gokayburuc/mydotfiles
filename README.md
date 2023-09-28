@@ -19,5 +19,10 @@
 * folke/zen-mode
 * mhartington/formatter.nvim
 * nvim notify
+* vim-easy-align 
+* vim-fugutive
+* comment
+* undotree 
+
 
 ## COLORSCHEMES
