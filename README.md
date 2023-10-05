@@ -1,28 +1,39 @@
 # GOKAYBURUC NEOVIM DOTFILES
 
-## PLUGINS
-
-* packer.nvim
-* nvim-tree
-* mason
-* telescope
-* lualine
-* bufferline
-* nvim-treesitter
-* nvim-web-devicons
-* harpoon
-* autopairs
-* markdown-preview
-* nvim-surround
-* fugitive
-* indent-blankline
-* folke/zen-mode
-* mhartington/formatter.nvim
-* nvim notify
-* vim-easy-align 
-* vim-fugutive
-* comment
-* undotree 
+## FOLDERTREE 
 
 
-## COLORSCHEMES
+Here is my foldertree below: 
+
+```bash
+.
+├── init.lua
+├── lua
+│   └── core
+│       ├── keymaps.lua
+│       ├── options.lua
+│       ├── plugin_config
+│       │   ├── autocomplete.lua
+│       │   ├── colors.lua
+│       │   ├── formatter.lua
+│       │   ├── harpoon.lua
+│       │   ├── lspfuzzy.lua
+│       │   ├── lspkind.lua
+│       │   ├── lualine.lua
+│       │   ├── mason_config.lua
+│       │   ├── neo_solarized.lua
+│       │   ├── nvim-tree.lua
+│       │   ├── peek.lua
+│       │   ├── snippets.lua
+│       │   ├── telescope.lua
+│       │   └── treesitter.lua
+│       └── plugins.lua
+├── plugin
+│   └── packer_compiled.lua
+└── README.md
+
+4 directories, 20 files
+
+
+```
+

@@ -26,16 +26,11 @@ return require("packer").startup(function(use)
 		-- or , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	-- telescope file browser
-	use({
-		"nvim-telescope/telescope-file-browser.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	})
-
-    -- DAP 
-    use "mfussenegger/nvim-dap"
-
-    use "nvim-telescope/telescope-dap.nvim"
+	-- -- telescope file browser
+	-- use({
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	-- })
 
 	use("junegunn/vim-easy-align")
 
@@ -60,7 +55,6 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
-
 
 	-- undotree
 	use("mbbill/undotree")
@@ -149,8 +143,6 @@ return require("packer").startup(function(use)
 	-- autotag
 	use("windwp/nvim-ts-autotag")
 
-	-- midnight colorscheme
-
 	-- todo comments
 	use({
 		"folke/todo-comments.nvim",
@@ -167,10 +159,24 @@ return require("packer").startup(function(use)
 	-- color
 	use("tjdevries/colorbuddy.nvim")
 
-	use("folke/trouble.nvim")
-
 	use("lewis6991/gitsigns.nvim")
-	use("rcarriga/nvim-notify")
+
+	use({
+		"realprogrammersusevim/md-to-html.nvim",
+		cmd = { "MarkdownToHTML", "NewMarkdownToHTML" },
+	})
+
+	use({
+		"aurum77/live-server.nvim",
+		run = function()
+			require("live_server.util").install()
+		end,
+		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+	})
+
+	use("fedepujol/bracketpair.nvim")
+
+	use("fladson/vim-kitty")
 
 	-- COLORSCHEMES
 	use("metalelf0/jellybeans-nvim")
@@ -178,21 +184,19 @@ return require("packer").startup(function(use)
 	use("savq/melange-nvim")
 	use("edmondburnett/leeward.nvim")
 	use("rebelot/kanagawa.nvim")
-	use("Mofiqul/adwaita.nvim")
 	use("Yagua/nebulous.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("marko-cerovac/material.nvim")
 	use("heraldofsolace/nisha-vim")
-	use("yorik1984/newpaper.nvim")
 	use("AlexvZyl/nordic.nvim")
 	use("gbprod/nord.nvim")
 	use("folke/tokyonight.nvim")
 	use("luisiacc/the-matrix.nvim")
-	use("numToStr/Sakura.nvim")
 	use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
 	use("dasupradyumna/midnight.nvim")
 	use("Tsuzat/NeoSolarized.nvim")
 	use("ellisonleao/gruvbox.nvim")
+	use("oxfist/night-owl.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

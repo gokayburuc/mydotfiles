@@ -16,4 +16,3 @@ vim.keymap.set("n", "<leader>fk", builtin.keymaps, {})
 -- vim.keymap.set('n', '<leader>fc',  builtin.commands,          {})
 -- vim.keymap.set('n', '<leader>fc',  builtin.commands,          {})
 
-require('telescope').load_extension('dap')

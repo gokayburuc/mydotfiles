@@ -47,10 +47,10 @@ require("formatter").setup({
 			require("formatter.filetypes.go").gofmt,
 		},
         markdown = {
-            require("formatter.filetypes.markdown").rustywind,
+            require("formatter.filetypes.markdown").prettier,
         },
         html = {
-            require("formatter.filetypes.html").rustywind,
+            require("formatter.filetypes.html").prettier,
         },
 
 		-- Use the special "*" filetype for defining formatter configurations on
