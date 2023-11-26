@@ -1,4 +1,12 @@
-require("mason").setup()
+require("mason").setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
 require("mason-lspconfig").setup()
 
 -- local capabilities
@@ -32,18 +40,16 @@ lconf.gopls.setup({
 })
 
 -- EMMET
-lconf.emmet_ls.setup({ capabilities = capabilities })
+lconf.emmet_language_server.setup({ capabilities = capabilities })
 
 -- JAVASCRIPT
 lconf.eslint.setup({ capabilities = capabilities })
-lconf.tsserver.setup({ capabilities = capabilities })
 
 -- HTML
 lconf.html.setup({ capabilities = capabilities })
 
 -- CSS
 lconf.cssls.setup({ capabilities = capabilities })
-lconf.tailwindcss.setup({ capabilities = capabilities })
 
 -- BASH
 lconf.bashls.setup({ capabilities = capabilities })
@@ -51,19 +57,10 @@ lconf.bashls.setup({ capabilities = capabilities })
 -- PYTHON
 lconf.pylsp.setup({ capabilities = capabilities })
 
--- YAML
-lconf.yamlls.setup({ capabilities = capabilities })
-
 -- VIM
 lconf.vimls.setup({ capabilities = capabilities })
 
--- RUST
-lconf.rust_analyzer.setup({ capabilities = capabilities })
-
--- TOML
-lconf.taplo.setup({ capabilities = capabilities })
-
--- XML
-lconf.lemminx.setup({ capabilities = capabilities })
+-- JSON
+lconf.jsonls.setup({ capabilities = capabilities })
 
 require("luasnip.loaders.from_vscode").lazy_load()

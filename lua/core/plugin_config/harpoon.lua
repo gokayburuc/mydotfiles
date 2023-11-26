@@ -16,5 +16,5 @@ vim.keymap.set("n", "<leader>w", function()
 	ui.nav_next()
 end)
 
+-- TODO: harpoon functions from help 
 
--- TODO: harpoon 

@@ -1,13 +1,19 @@
-vim.cmd("autocmd!")
+-- encoding
 vim.scriptencoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.encoding = "utf-8"
+
 vim.opt.title = true
+
+-- indent
 vim.opt.autoindent = true
 vim.opt.ai = true -- auto indent
 vim.opt.si = true -- smart indent
+
+-- wrap
 vim.opt.wrap = true
 
+-- mapleader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -54,6 +60,6 @@ vim.opt.splitbelow = true
 vim.opt.clipboard:append({ "unnamedplus" })
 
 -- wildoptions and other settings
-vim.opt.wildoptions = "pum" -- TODO: check this from internet
+vim.opt.wildoptions = "pum" -- TODO: check this from internet vim.opt.wildoptions
 vim.opt.pumblend = 5 -- TODO:    check this from internet
 vim.opt.winblend = 0 -- TODO:    check this from internet

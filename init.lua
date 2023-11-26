@@ -1,16 +1,15 @@
 -- CORE CONFIGURATIONS
+require("core.options")
+require("core.plugins")
+require("core.keymaps")
 
-require("core.options") -- core options
-require("core.plugins") -- plugins
-require("core.keymaps") -- keymaps
-
---PLUGINS
+-- PLUGINS
 require("core.plugin_config.lualine")
 require("core.plugin_config.nvim-tree")
 require("core.plugin_config.telescope")
 require("core.plugin_config.treesitter")
 
--- Comments
+-- COMMENTS
 require("Comment").setup()
 
 -- LSP
@@ -18,31 +17,26 @@ require("core.plugin_config.lspkind")
 require("core.plugin_config.mason_config")
 require("core.plugin_config.autocomplete")
 
--- snippets
+-- SNIPPETS
 require("core.plugin_config.snippets")
 
--- peek
-require("core.plugin_config.peek")
-
--- harpoon
+-- HARPOON
 require("core.plugin_config.harpoon")
 
 -- COLORS
 require("core.plugin_config.colors")
 
--- bufferline
+-- BUFFERLINE
 require("bufferline").setup({})
 
--- highlight colors
+-- HIGHLIGHT COLORS
 require("nvim-highlight-colors").setup({})
 
--- autotag
+-- AUTOTAG
 require("nvim-ts-autotag").setup()
 
--- TODO COMMENTS
+-- TODO-COMMENTS
 require("todo-comments").setup({})
 
 -- FORMATTER
 require("core.plugin_config.formatter")
-
-

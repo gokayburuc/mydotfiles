@@ -4,7 +4,7 @@ local util = require("formatter.util")
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 require("formatter").setup({
 	-- Enable or disable logging
-	logging = true,
+	logging = false,
 	-- Set the log level
 	log_level = vim.log.levels.WARN,
 	-- All formatter configurations are opt-in
@@ -39,19 +39,21 @@ require("formatter").setup({
 			end,
 		},
 
-		python = {
-			require("formatter.filetypes.python").autopep8,
+		html = {
+			require("formatter.filetypes.html").prettier,
 		},
-
+		css = {
+			require("formatter.filetypes.css").prettier,
+		},
+		bash = {
+			require("formatter.filetypes.sh").beautysh,
+		},
+		json = {
+			require("formatter.filetypes.json").prettier,
+		},
 		go = {
-			require("formatter.filetypes.go").gofmt,
+			require("formatter.filetypes.go").goimports,
 		},
-        markdown = {
-            require("formatter.filetypes.markdown").prettier,
-        },
-        html = {
-            require("formatter.filetypes.html").prettier,
-        },
 
 		-- Use the special "*" filetype for defining formatter configurations on
 		-- any filetype
@@ -62,13 +64,3 @@ require("formatter").setup({
 		},
 	},
 })
-
--- FIXME: format after save
--- augroup FormatAutogroup
---   autocmd!
---   autocmd BufWritePost * FormatWrite
--- augroup END
-
--- FIXME: formatter keys
--- nnoremap <silent> <leader>f :Format<CR>
--- nnoremap <silent> <leader>F :FormatWrite<CR>

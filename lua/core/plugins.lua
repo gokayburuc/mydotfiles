@@ -1,18 +1,9 @@
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
-end
-
-local packer_bootstrap = ensure_packer()
+vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
+
+	-- treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
@@ -20,18 +11,22 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+
+	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.3",
 		-- or , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-	-- -- telescope file browser
-	-- use({
-	-- 	"nvim-telescope/telescope-file-browser.nvim",
-	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	-- })
 
+	--
+	use({ "nvim-telescope/telescope-ui-select.nvim" })
+
+	-- dressing
+	use("stevearc/dressing.nvim")
+
+	-- easy align
 	use("junegunn/vim-easy-align")
 
 	-- nvimtree
@@ -39,9 +34,6 @@ return require("packer").startup(function(use)
 
 	-- nvim web devicons
 	use("nvim-tree/nvim-web-devicons")
-
-	-- tpope plugins
-	use("tpope/vim-fugitive")
 
 	-- LUALINE
 	use({
@@ -93,15 +85,6 @@ return require("packer").startup(function(use)
 	-- colorizer - hex colors
 	use("norcalli/nvim-colorizer.lua")
 
-	-- zephyr colorscheme
-	use({
-		"glepnir/zephyr-nvim",
-		requires = { "nvim-treesitter/nvim-treesitter", opt = true },
-	})
-
-	-- markdown preview
-	use({ "toppair/peek.nvim", run = "deno task --quiet build:fast" })
-
 	-- Auto Pairs
 	use({ "jiangmiao/auto-pairs" }) -- autopairs
 
@@ -114,15 +97,6 @@ return require("packer").startup(function(use)
 	-- LSP fuzzy finder
 	use({ "ojroques/nvim-lspfuzzy" })
 
-	use("nvimdev/lspsaga.nvim")
-
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
-
 	-- nvim surround
 	use({
 		"kylechui/nvim-surround",
@@ -134,8 +108,11 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- indent-blankline
-	use("lukas-reineke/indent-blankline.nvim")
+	use({
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {},
+	})
 
 	-- color highlight
 	use("brenoprata10/nvim-highlight-colors")
@@ -150,21 +127,20 @@ return require("packer").startup(function(use)
 		opts = {},
 	})
 
-	-- folke zen mode
-	use("folke/zen-mode.nvim")
+	-- vscode bulb
+	use({ "kosayoda/nvim-lightbulb" })
 
+	require("nvim-lightbulb").setup({
+		autocmd = { enabled = true },
+	})
 	-- formatter
 	use({ "mhartington/formatter.nvim" })
 
 	-- color
 	use("tjdevries/colorbuddy.nvim")
 
+	-- gitsigns
 	use("lewis6991/gitsigns.nvim")
-
-	use({
-		"realprogrammersusevim/md-to-html.nvim",
-		cmd = { "MarkdownToHTML", "NewMarkdownToHTML" },
-	})
 
 	use({
 		"aurum77/live-server.nvim",
@@ -174,31 +150,44 @@ return require("packer").startup(function(use)
 		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
 	})
 
-	use("fedepujol/bracketpair.nvim")
-
-	use("fladson/vim-kitty")
+	-- vista
+	use("liuchengxu/vista.vim")
 
 	-- COLORSCHEMES
-	use("metalelf0/jellybeans-nvim")
-	use("rafamadriz/neon")
-	use("savq/melange-nvim")
-	use("edmondburnett/leeward.nvim")
 	use("rebelot/kanagawa.nvim")
-	use("Yagua/nebulous.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("marko-cerovac/material.nvim")
-	use("heraldofsolace/nisha-vim")
-	use("AlexvZyl/nordic.nvim")
 	use("gbprod/nord.nvim")
 	use("folke/tokyonight.nvim")
-	use("luisiacc/the-matrix.nvim")
+	use({ "metalelf0/jellybeans-nvim", requires = { "rktjmp/lush.nvim" } })
 	use({ "rockyzhang24/arctic.nvim", requires = { "rktjmp/lush.nvim" } })
 	use("dasupradyumna/midnight.nvim")
 	use("Tsuzat/NeoSolarized.nvim")
 	use("ellisonleao/gruvbox.nvim")
 	use("oxfist/night-owl.nvim")
+	use({
+		"glepnir/zephyr-nvim",
+		requires = { "nvim-treesitter/nvim-treesitter", opt = true },
+	})
+	use("navarasu/onedark.nvim")
+	use("craftzdog/solarized-osaka.nvim")
+	use({
+		"loctvl842/monokai-pro.nvim",
+		config = function()
+			require("monokai-pro").setup()
+		end,
+	})
+	use({
+		"xiantang/darcula-dark.nvim",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+	})
 
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+	use({ "kartikp10/noctis.nvim", requires = { "rktjmp/lush.nvim" } })
+	use({ "miikanissi/modus-themes.nvim" })
+	use({ "cesarsl/neo-hybrid.nvim" })
+	use("BoilingSoup/fruitypebbles.nvim")
+
+	use("doums/darcula")
+	use({ "zootedb0t/citruszest.nvim" })
+	use({ "rose-pine/neovim", as = "rose-pine" })
 end)
