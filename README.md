@@ -2,7 +2,7 @@
 
 **Last Update:** 2023-12-18 19:49 
 
-![cover]("img/dotfiles.png")
+![cover](img/dotfiles.png)
 
 ## TOC - Table Of Contents 
 
