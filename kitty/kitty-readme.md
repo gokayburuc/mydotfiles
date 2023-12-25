@@ -1,7 +1,6 @@
-
-<!-- FIXME: kitty badge image  -->
-
 # Kitty Configuration and Files 
+
+![kitty]('https://sw.kovidgoyal.net/kitty/_static/kitty.svg') 
 
 ## Index 
 

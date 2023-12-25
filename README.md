@@ -13,6 +13,6 @@
 - [zsh](zsh/zsh-readme.md)
 - [tmux](tmux/tmux-readme.md)
 - [fonts](fonts/) 
-
+- [git](git-conf/git-readme.md)
 
 
