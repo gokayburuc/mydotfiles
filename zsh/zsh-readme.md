@@ -1,6 +1,6 @@
 # ZSH README 
 
-![oh-my-zsh](img/omz-logo.png) 
+![oh-my-zsh](main/img/omz-logo.png) 
 
 ## index 
 

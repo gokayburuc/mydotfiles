@@ -1,7 +1,7 @@
 
 ## AUTOMATE YOUR GIT WORKFLOW 
 
-![git](img/git.jpeg) 
+![git](main/img/git.jpeg) 
 
 1. Open your terminal conf from `.zshrc` or `.bashrc` 
 2. Add this lines given below: 
