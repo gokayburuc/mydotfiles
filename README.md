@@ -1,6 +1,6 @@
 # Gokay BURUC - DotFiles
 
-**Last Update:** 2023-12-18 19:49 
+Last Update : 2023-12-26 00:40
 
 ![cover](img/dotfiles.png)
 
