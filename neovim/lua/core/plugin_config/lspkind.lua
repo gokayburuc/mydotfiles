@@ -18,4 +18,3 @@ cmp.setup({
 })
 
 
--- TODO: lspkind setup from github

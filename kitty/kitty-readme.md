@@ -2,6 +2,8 @@
 
 ![kitty]('https://sw.kovidgoyal.net/kitty/_static/kitty.svg') 
 
+<!-- FIXME: image links in github repo  -->
+
 ## Index 
 
 - [kitty.conf](kitty.conf)
