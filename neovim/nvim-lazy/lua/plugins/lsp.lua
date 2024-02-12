@@ -47,10 +47,19 @@ return {
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 			}),
 
-			window = {
-				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
-			},
+            -- window border options 
+			-- window = {
+			-- 	-- completion = cmp.config.window.bordered(),
+			-- 	-- documentation = cmp.config.window.bordered(),
+   --              completion = {
+   --                  border = "rounded",
+   --                  winhighlight = "Normal:CmpNormal",
+   --              },
+   --              documentation = {
+   --                  winhighlight = "Normal:CmpDocNormal",
+   --                  border = "rounded"
+   --              },
+			-- },
 
 			--source config
 			sources = cmp.config.sources({
@@ -63,3 +72,5 @@ return {
 		})
 	end,
 }
+
+-- TODO:  luasnip ve diger snippet uygulamaları customize snippets 

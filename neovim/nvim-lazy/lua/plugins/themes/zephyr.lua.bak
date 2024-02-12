@@ -1,0 +1,7 @@
+return {
+    'glepnir/zephyr-nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', opt = true },
+config = function ()
+    vim.cmd[[colorscheme zephyr]]
+end
+}

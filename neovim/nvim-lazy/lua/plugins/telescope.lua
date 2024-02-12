@@ -1,23 +1,48 @@
-return	{
-	'nvim-telescope/telescope.nvim',
-	branch = '0.1.x',
+return {
+	"nvim-telescope/telescope.nvim",
+	branch = "0.1.x",
 	dependencies = {
-		'nvim-lua/plenary.nvim',
-		-- Fuzzy Finder Algorithm which requires local dependencies to be built.
-		-- Only load if `make` is available. Make sure you have the system
-		-- requirements installed.
+		"nvim-lua/plenary.nvim",
 		{
-			'nvim-telescope/telescope-fzf-native.nvim',
-			-- NOTE: If you are having trouble with this installation,
-			--       refer to the README for telescope-fzf-native for more instructions.
-			build = 'make',
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
 			cond = function()
-				return vim.fn.executable 'make' == 1
+				return vim.fn.executable("make") == 1
 			end,
 		},
 	},
+
+	config = function()
+		local opts = {
+			theme = "dropdown",
+			initial = "normal",
+			layout_strategy = "flex",
+			border = true,
+			layout_config = {
+				horizontal = {
+					prompt_position = "top",
+					height = 0.95,
+					width = 0.90,
+				},
+				vertical = { prompt_position = "top" },
+			},
+		}
+
+		require("telescope").setup({
+			pickers = {
+				find_files = opts,
+				keymaps = opts,
+				diagnostics = opts,
+				colorschemes = opts,
+				commands = opts,
+				current_buffer_fuzzy_find = opts,
+				lsp_document_symbols = opts,
+				treesitter = opts,
+				live_grep = opts,
+			},
+		})
+
+		require("telescope").load_extension("harpoon")
+		require("telescope").load_extension("fzf")
+	end,
 }
-
-
-
-

@@ -64,6 +64,6 @@ vim.opt.splitbelow = true
 vim.opt.clipboard:append({ "unnamedplus" })
 
 -- wildoptions and other settings
-vim.opt.wildoptions = "pum" -- TODO: check this from internet vim.opt.wildoptions
-vim.opt.pumblend = 5 -- TODO:    check this from internet
-vim.opt.winblend = 0 -- TODO:    check this from internet
+vim.opt.wildoptions = "pum"
+vim.opt.pumblend = 5
+vim.opt.winblend = 0
