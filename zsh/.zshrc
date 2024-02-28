@@ -77,7 +77,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions fzf)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions aliases colored-man-pages fzf tmux zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,58 +117,91 @@ export PATH=$PATH:/usr/local/go/bin
 # most
 export PAGER="most"
 
-# app operations 
+# tokyonight-moon colorscheme 
+# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+# --color=fg:#c8d3f5,bg:#222436,hl:#ff966c \
+# --color=fg+:#c8d3f5,bg+:#2f334d,hl+:#ff966c \
+# --color=info:#82aaff,prompt:#86e1fc,pointer:#86e1fc \
+# --color=marker:#c3e88d,spinner:#c3e88d,header:#c3e88d"
+
+# tokyonight storm colorscheme
+# export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+# --color=fg:#c0caf5,bg:#24283b,hl:#ff9e64 \
+# --color=fg+:#c0caf5,bg+:#292e42,hl+:#ff9e64 \
+# --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff \
+# --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a"
+
+
+# app operations
 alias app_i="sudo apt install"
 alias app_s="sudo apt search"
 alias app_r="sudo apt remove"
 
-# flat 
+# flat
 alias flat_r="flatpak remove"
 alias flat_i="flatpak install"
 
-# sys 
+# sys
 alias sys_u="sudo apt update && sudo apt upgrade"
 alias sys_c="sudo apt autoclean && sudo apt autoremove && sudo apt autopurge"
 
-# lsd 
+# lsd
 alias ls="lsd"
 
-#tar 
+#tar
 alias zp="tar czf"
 alias zpac="tar xvf"
 
-# file manager and finder 
-alias ff="find . -type f -name "
-
-# lynx 
+# lynx
 alias ahref='lynx -dump -nonumbers -list-only'
 
 # folder size namangement
 alias fsize="du -had1 | sort -hr"
 
-# fzf 
-alias izf="fzf --height=40% --border"
+# nvim open fzf file
+alias nv_fzf='nvim $(fzf)'
 
-# reload 
-alias src='source ~/.zshrc'
+#read ebook using fzf
+alias epub_fzf='fbreader $(fzf --query "epub$")'
 
-# nvim open fzf file 
-alias nzf='nvim $(izf)'
+#read pdf using fzf
+alias pdf_fzf='evince $(fzf)'
 
+# ff 
+alias ff='fzf --reverse --border --height=60%'
 
-# fzf color scheme
-# tomasr/molokai
-# export FZF_DEFAULT_OPTS='--color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
-#
-# jelly beans colorscheme 
-# export FZF_DEFAULT_OPTS='--color=bg+:#3F3F3F,bg:#4B4B4B,border:#6B6B6B,spinner:#98BC99,hl:#719872,fg:#D9D9D9,header:#719872,info:#BDBB72,pointer:#E12672,marker:#E17899,fg+:#D9D9D9,preview-bg:#3F3F3F,prompt:#98BEDE,hl+:#98BC99'
+# go to directory directly 
+alias gcd='cd "$(find -type d | ff)"'
 
-# ========================================================
-# GITCONFIG HERE 
-#
+# chatgpt
+# export OPENAI_API_KEY='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'
+# export OPENAI_API_KEY='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'
 
-# =======================================================
-#
-#
+# GIT CONF
+export GIT_USERNAME='gokayburuc'
+export GIT_ACCESS_TOKEN='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'
+
+#alternative chatgpt
+# OPENAI_API_KEY='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' echo $OPENAI_API_KEY
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# query search 
+querysearch(){
+    find -type f -name "*.$2" -exec grep -H "$1" {} \;
+}
+
+# change desktop wallpaper
+changewall(){
+    gsettings set org.gnome.desktop.background picture-uri "$(find ~/Pictures -type f | ff)"
+}
+
+# ffmpeg converter 
+
+convert_webp(){
+    ffmpeg -i "$1" "$2.png"
+}
+
+#zoxide 
+eval "$(zoxide init zsh)"
