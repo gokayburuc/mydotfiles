@@ -5,5 +5,5 @@ Made with ![Static Badge](https://img.shields.io/badge/lua-blue?style=for-the-ba
 
 <!-- FIXME: update last conf -->
 
-[lazy-package-manager](nvim-lazy/)
-[packer-package-manager](nvim-packer/) 
+- [lazy-package-manager](nvim-lazy/)
+- [packer-package-manager](nvim-packer/) 

@@ -1,5 +1,12 @@
 return {
 	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
+	{
 		"aurum77/live-server.nvim",
 		build = function()
 			require("live_server.util").install()
@@ -26,8 +33,8 @@ return {
 
 	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 
-    -- pastelnight
-    {
+	-- pastelnight
+	{
 		"pauchiner/pastelnight.nvim",
 		lazy = false,
 		priority = 1000,
@@ -300,9 +307,9 @@ return {
 
 			-- JAVASCRIPT
 			lconf.eslint.setup({ capabilities = capabilities })
-			
-            -- TYPESCRIPT
-            lconf.tsserver.setup({ capabilities = capabilities })
+
+			-- TYPESCRIPT
+			lconf.tsserver.setup({ capabilities = capabilities })
 
 			-- HTML
 			lconf.html.setup({ capabilities = capabilities })
