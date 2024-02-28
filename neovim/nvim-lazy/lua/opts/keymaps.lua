@@ -2,7 +2,7 @@ local builtin = require("telescope.builtin")
 local opts = { noremap = true }
 
 -- NVIM TREE
-vim.keymap.set("n", "<leader><C-n>", ":NvimTreeToggle<CR>", { desc = "NvimTreeToggle" }, opts)
+vim.keymap.set("n", "<c-n>", ":NvimTreeToggle<CR>", { desc = "NvimTreeToggle" }, opts)
 
 -- SYMBOLS OUTLINE
 vim.keymap.set("n", "<leader><F8>", ":SymbolsOutlineOpen<CR>", { desc = "Symbols Outline - Open" })
@@ -12,12 +12,17 @@ vim.keymap.set("n", "<leader><F9>", ":SymbolsOutlineClose<CR>", { desc = "Symbol
 vim.keymap.set("n", "<leader><F6>", ":UndotreeShow<CR>", { desc = "UndoTree - Show" })
 vim.keymap.set("n", "<leader><F7>", ":UndotreeHide<CR>", { desc = "UndoTree - Hide" })
 
--- TODO
-vim.keymap.set("n", "<leader><F5>", ":TodoTelescope<CR>", { desc = " TodoTelescope - Show" })
+-- INFO: TODO keymaps
+vim.keymap.set("n", "<leader>td", ":TodoTelescope<CR>",                           { desc = " TodoTelescope - Show" })
+vim.keymap.set("n", "<leader>tdf", ":TodoTelescope keywords=FIX,FIXME,FIXIT<CR>", { desc = " TodoTelescope - FIX " })
+vim.keymap.set("n", "<leader>tdt", ":TodoTelescope keywords=TODO<CR>",            { desc = " TodoTelescope - TODO " })
+vim.keymap.set("n", "<leader>tdw", ":TodoTelescope keywords=WARN,XXX<CR>",        { desc = " TodoTelescope - WARN " })
+vim.keymap.set("n", "<leader>tdn", ":TodoTelescope keywords=NOTE,INFO<CR>",       { desc = " TodoTelescope - NOTE " })
 
--- TROUBLE
-vim.keymap.set("n", "<leader>ts", ":Trouble<CR>", { desc = "Trouble - Show" })
-vim.keymap.set("n", "<leader>tc", ":TroubleClose<CR>", { desc = "Trouble - Hide" })
+
+-- LSP Saga 
+vim.keymap.set("n", "<leader>tr", ":Lspsaga term_toggle<CR>", {desc = "LSPSaga - Toggle Term"})
+
 
 -- TELESCOPE DIAGNOSTICS
 vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope - Diagnostics" })
@@ -45,11 +50,10 @@ vim.keymap.set("n", "<leader>ft", builtin.treesitter, { desc = "Telescope - Tree
 vim.keymap.set("n", "<leader>fls", builtin.lsp_document_symbols, { desc = "Telescope - LSP Document Symbols" })
 vim.keymap.set("n", "<leader>fld", builtin.lsp_definitions, { desc = "Telescope - LSP Definitions" })
 
--- colorscheme 
-vim.keymap.set('n','<leader>fv', builtin.colorscheme, {desc="Telescope - Colorschemes"})
+-- colorscheme
+vim.keymap.set("n", "<leader>fv", builtin.colorscheme, { desc = "Telescope - Colorschemes" })
 
-
--- harpoon 
+-- harpoon
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
