@@ -177,9 +177,11 @@ alias gcd='cd "$(find -type d | ff)"'
 # export OPENAI_API_KEY='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'
 # export OPENAI_API_KEY='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'
 
+# WARN:  delete GIT_USERNAME and GIT_ACCESS_TOKEN before push repo
+
 # GIT CONF
-export GIT_USERNAME='gokayburuc'
-export GIT_ACCESS_TOKEN='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'
+export GIT_USERNAME=''
+export GIT_ACCESS_TOKEN=''
 
 #alternative chatgpt
 # OPENAI_API_KEY='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' echo $OPENAI_API_KEY

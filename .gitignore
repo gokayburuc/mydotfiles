@@ -4,3 +4,4 @@ neovim/nvim-lazy/lazygit
 neovim/nvim-lazy/lazy-lock.json
 tmux/.tmux-themepack
 tmux/.tmux/plugins
+img/img-backup
