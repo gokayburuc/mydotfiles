@@ -2,7 +2,7 @@ local builtin = require("telescope.builtin")
 local opts = { noremap = true }
 
 -- NVIM TREE
-vim.keymap.set("n", "<c-n>", ":NvimTreeToggle<CR>", { desc = "NvimTreeToggle" }, opts)
+vim.keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>", { desc = "NvimTreeToggle" }, opts)
 
 -- SYMBOLS OUTLINE
 vim.keymap.set("n", "<leader><F8>", ":SymbolsOutlineOpen<CR>", { desc = "Symbols Outline - Open" })
@@ -70,3 +70,7 @@ end, { desc = "Harpoon - Previous Mark" })
 vim.keymap.set("n", "<leader>w", function()
 	ui.nav_next()
 end, { desc = "Harpoon - Next Mark" })
+
+
+-- lazy 
+vim.keymap.set('n', '<leader>l', ':Lazy<CR>', {desc = "Lazy Dashboard"})

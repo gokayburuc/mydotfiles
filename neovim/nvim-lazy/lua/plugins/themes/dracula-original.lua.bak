@@ -1,3 +1,0 @@
-return {
-    'dracula/vim', name = "dracula_original"
-}

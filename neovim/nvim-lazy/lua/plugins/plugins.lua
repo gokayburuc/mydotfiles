@@ -1,59 +1,78 @@
 return {
-	{
-		"stevearc/oil.nvim",
-		opts = {},
-		-- Optional dependencies
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
 
 	{
-		"aurum77/live-server.nvim",
-		build = function()
-			require("live_server.util").install()
-		end,
-		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
-	},
-
-	{
-		"mfussenegger/nvim-lint",
+		"Yazeed1s/minimal.nvim",
+		lazy = false,
 		config = function()
-			require("lint").linter_by_ft = {
-				javascript = { "eslint_d" },
-				lua = { "luacheck" },
-				python = { "flake8" },
-			}
+			-- vim.g.minimal_transparent_background = true
+			-- vim.cmd.colorscheme("minimal")
 		end,
 	},
 
 	{
-		"NTBBloodbath/doom-one.nvim",
-		priority = 1000,
-		config = function() end,
-	},
-
-	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
-
-	-- pastelnight
-	{
-		"pauchiner/pastelnight.nvim",
+		"maxmx03/solarized.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
-	},
+		config = function()
+			vim.o.background = "dark" -- or 'light'
+			-- default config
+			require("solarized").setup({
+				transparent = true, -- enable transparent background
+				palette = "solarized", -- or selenized
+				styles = {
+					comments = {},
+					functions = {},
+					variables = {},
+					numbers = {},
+					constants = {},
+					parameters = {},
+					keywords = {},
+					types = {},
+				},
+				enables = {
+					bufferline = true,
+					cmp = true,
+					diagnostic = true,
+					dashboard = true,
+					editor = true,
+					gitsign = true,
+					hop = true,
+					indentblankline = true,
+					lsp = true,
+					lspsaga = true,
+					navic = true,
+					neogit = true,
+					neotree = true,
+					notify = true,
+					noice = true,
+					semantic = true,
+					syntax = true,
+					telescope = true,
+					tree = true,
+					treesitter = true,
+					todo = true,
+					whichkey = true,
+					mini = true,
+				},
+				-- highlights = {},
+				-- colors = {},
+				theme = "neo", -- or 'neo' 'default'
+				autocmd = false,
+			})
 
-	{
-		"Yazeed1s/oh-lucy.nvim",
-		priority = 1000,
-		config = function() end,
+			vim.cmd.colorscheme("solarized")
+		end,
 	},
 
 	{
 		"navarasu/onedark.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("onedark").setup({
 				-- Main options --
-				style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-				transparent = false, -- Show/hide background
+				style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+				transparent = true, -- Show/hide background
 				term_colors = true, -- Change terminal color as per the selected theme style
 				ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
 				cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -89,50 +108,124 @@ return {
 					background = true, -- use background color for virtual text
 				},
 			})
-
-			-- require('onedark').load()
+			-- require("onedark").load()
+			-- vim.cmd.colorscheme("onedark")
 		end,
 	},
 
 	{
-		"Tsuzat/NeoSolarized.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 		config = function()
-			local ok_status, NeoSolarized = pcall(require, "NeoSolarized")
+			require("nvim-tree").setup()
+		end,
+	},
 
-			if not ok_status then
-				return
-			end
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"marko-cerovac/material.nvim",
+		config = function()
+			local material = require("material")
 
-			NeoSolarized.setup({
-				style = "dark", -- "dark" or "light"
-				transparent = true, -- true/false; Enable this to disable setting the background color
-				terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-				enable_italics = false, -- Italics for different hightlight groups (eg. Statement, Condition, Comment, Include, etc.)
+			material.setup({
+				contrast = {
+					sidebars = true,
+					floating_windows = false,
+					cursor_line = false,
+					popup_menu = true,
+					filetypes = {
+						"qf",
+					},
+				},
+				plugins = {
+					"gitsigns",
+					"nvim-cmp",
+					"nvim-tree",
+					"nvim-web-devicons",
+					"telescope",
+					"which-key",
+				},
 				styles = {
-					-- Style to be applied to different syntax groups
-					comments = {},
-					keywords = { bold = true },
-					functions = { bold = true },
-					variables = { bold = true },
-					string = { italic = true },
-					underline = true, -- true/false; for global underline
-					undercurl = true, -- true/false; for global undercurl
+					comments = { italic = true },
+					functions = { italic = true },
+				},
+				disable = {
+					colored_cursor = false,
+					borders = true,
+					background = true,
+					term_colors = false,
+					eob_lines = false,
+				},
+				high_visibility = {
+					lighter = false,
+					darker = true,
 				},
 
-				-- FIXME: highlight in NeoSolarized settings
-				-- on_highlights = function(highlights, colors) end,
+				lualine_style = "stealth",
+				async_loading = true,
 			})
-			-- Set colorscheme to NeoSolarized
-			vim.cmd([[
-   try
-        colorscheme NeoSolarized
-    catch /^Vim\%((\a\+)\)\=:E18o
-        colorscheme default
-        set background=dark
-    endtry
-]])
+
+			-- Apply the colorscheme
+			-- vim.cmd("colorscheme material-deep-ocean")
+		end,
+	},
+
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		config = function()
+			require("gruvbox").setup({
+				terminal_colors = true, -- add neovim terminal colors
+				undercurl = true,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = true,
+					emphasis = true,
+					comments = true,
+					operators = false,
+					folds = true,
+				},
+				strikethrough = true,
+				invert_selection = false,
+				invert_signs = false,
+				invert_tabline = false,
+				invert_intend_guides = false,
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "hard", -- can be "hard", "soft" or empty string
+				palette_overrides = {},
+				overrides = {},
+				dim_inactive = false,
+				transparent_mode = true,
+			})
+			-- vim.cmd("colorscheme gruvbox")
+		end,
+	},
+
+	{
+		"aurum77/live-server.nvim",
+		build = function()
+			require("live_server.util").install()
+		end,
+		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+	},
+
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("lint").linter_by_ft = {
+				javascript = { "eslint_d" },
+				lua = { "luacheck" },
+				python = { "flake8" },
+			}
 		end,
 	},
 
@@ -149,6 +242,7 @@ return {
 				initial = "normal",
 				layout_strategy = "flex",
 				border = true,
+				path_display = "truncate",
 				layout_config = {
 					horizontal = {
 						prompt_position = "top",
@@ -160,11 +254,21 @@ return {
 			}
 
 			require("telescope").setup({
+				defaults = {
+					prompt_prefix = "🔎 ",
+					selection_caret = "🔥 ",
+					entry_prefix = "🔹 ",
+					color_devicons = true,
+				},
 				pickers = {
 					find_files = opts,
 					keymaps = opts,
 					diagnostics = opts,
-					colorschemes = opts,
+					colorschemes = {
+						enable_preview = true,
+						theme = "dropdown",
+						layout_config = { prompt_position = "top" },
+					},
 					commands = opts,
 					current_buffer_fuzzy_find = opts,
 					lsp_document_symbols = opts,
@@ -174,7 +278,14 @@ return {
 					autocommands = opts,
 					vim_options = opts,
 				},
-				extensions = {},
+				extensions = {
+					fzf = {
+						fuzzy = true,
+						override_generic_sorter = true,
+						override_file_sorter = true,
+						case_mode = "smart_case",
+					},
+				},
 			})
 
 			require("telescope").load_extension("harpoon")
@@ -195,11 +306,11 @@ return {
 			{ "williamboman/mason-lspconfig.nvim" },
 
 			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/nvim-cmp" },
 
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" },
@@ -215,6 +326,8 @@ return {
 		},
 
 		config = function()
+			require("lsp-zero")
+
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 
@@ -223,6 +336,27 @@ return {
 
 			-- own snippets
 			require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+
+			-- INFO: lspkind config
+			local lspkind = require("lspkind")
+			cmp.setup({
+				formatting = {
+					format = lspkind.cmp_format({
+						mode = "symbol_text", -- show only symbol annotations
+						maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+						-- can also be a function to dynamically calculate max width such as
+						-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+						ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+						show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+						-- The function below will be called before any actual modifications from lspkind
+						-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+						-- before = function(entry, vim_item)
+						-- 	return vim_item
+						-- end,
+					}),
+				},
+			})
 
 			cmp.setup({
 				snippet = {
@@ -241,17 +375,18 @@ return {
 
 				-- window border options
 				window = {
-					-- completion = cmp.config.window.bordered(),
-					-- documentation = cmp.config.window.bordered(),
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
 				},
 
 				--source config
 				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "buffer" },
-					{ name = "luasnip" },
-					{ name = "nvim_lsp_signature_help" },
-					{ name = "nvim_lsp_document_symbol" },
+					{ name = "buffer", priority = 6 },
+					{ name = "luasnip", priority = 3 },
+					{ name = "nvim_lsp", priority = 1 },
+					{ name = "nvim_lua", priority = 2 },
+					{ name = "nvim_lsp_document_symbol", priority = 4 },
+					{ name = "nvim_lsp_signature_help", priority = 5 },
 				}),
 			})
 		end,
@@ -302,8 +437,11 @@ return {
 				},
 			})
 
+			-- VIM
+			lconf.vimls.setup({ capabilities = capabilities })
+
 			-- EMMET
-			lconf.emmet_language_server.setup({ capabilities = capabilities })
+			lconf.emmet_ls.setup({ capabilities = capabilities })
 
 			-- JAVASCRIPT
 			lconf.eslint.setup({ capabilities = capabilities })
@@ -331,59 +469,14 @@ return {
 	},
 
 	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("nvim-tree").setup({})
-		end,
-	},
-
-	{
 		"mhartington/formatter.nvim",
 		config = function()
-			-- Utilities for creating configurations
-			local util = require("formatter.util")
-
-			-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 			require("formatter").setup({
-				-- Enable or disable logging
 				logging = false,
-				-- Set the log level
 				log_level = vim.log.levels.WARN,
-				-- All formatter configurations are opt-in
 				filetype = {
-					-- Formatter configurations for filetype "lua" go here
-					-- and will be executed in order
 					lua = {
-						-- "formatter.filetypes.lua" defines default configurations for the
-						-- "lua" filetype
 						require("formatter.filetypes.lua").stylua,
-
-						-- You can also define your own configuration
-						function()
-							-- Supports conditional formatting
-							if util.get_current_buffer_file_name() == "special.lua" then
-								return nil
-							end
-
-							-- Full specification of configurations is down below and in Vim help
-							-- files
-							return {
-								exe = "stylua",
-								args = {
-									"--search-parent-directories",
-									"--stdin-filepath",
-									util.escape_path(util.get_current_buffer_file_path()),
-									"--",
-									"-",
-								},
-								stdin = true,
-							}
-						end,
 					},
 
 					html = {
@@ -405,11 +498,8 @@ return {
 						require("formatter.filetypes.python").autopep8,
 					},
 
-					-- Use the special "*" filetype for defining formatter configurations on
 					-- any filetype
 					["*"] = {
-						-- "formatter.filetypes.any" defines default configurations for any
-						-- filetype
 						require("formatter.filetypes.any").remove_trailing_whitespace,
 					},
 				},
@@ -469,16 +559,15 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {},
 		build = ":TSUpdate",
 		config = function()
 			local configs = require("nvim-treesitter.configs")
+
 			configs.setup({
 				ensure_installed = {
-					"tsx",
-					"json",
 					"c",
 					"lua",
+					"luadoc",
 					"vim",
 					"vimdoc",
 					"query",
@@ -486,18 +575,13 @@ return {
 					"heex",
 					"javascript",
 					"html",
-					"markdown",
 				},
 				sync_install = false,
-				highlight = { enable = true, disable = {} },
-				indent = { enable = true, disable = {} },
-				autotag = { enable = true },
-				incremental_selection = { enable = true },
-				textobjects = { enable = true },
+				highlight = { enable = true },
+				indent = { enable = true },
 			})
 		end,
 	},
-
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
@@ -505,7 +589,7 @@ return {
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
-					theme = "NeoSolarized", -- DEFAULT: auto
+					theme = "auto", -- DEFAULT: auto
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
@@ -544,12 +628,6 @@ return {
 			})
 		end,
 	},
-
-	{
-		"rktjmp/lush.nvim",
-		"tjdevries/colorbuddy.vim",
-	},
-
 	{
 		"mbbill/undotree",
 	},
@@ -560,76 +638,6 @@ return {
 
 		config = function()
 			require("dressing").setup()
-		end,
-	},
-
-	-- symbols-outline
-	{
-		"simrat39/symbols-outline.nvim",
-		config = function()
-			require("symbols-outline").setup({
-				highlight_hovered_item = true,
-				show_guides = true,
-				auto_preview = false,
-				position = "left",
-				relative_width = true,
-				width = 25,
-				auto_close = false,
-				show_numbers = false,
-				show_relative_numbers = false,
-				show_symbol_details = true,
-				preview_bg_highlight = "Pmenu",
-				autofold_depth = nil,
-				auto_unfold_hover = true,
-				fold_markers = { "", "" },
-				wrap = false,
-				keymaps = { -- These keymaps can be a string or a table for multiple keys
-					close = { "<Esc>", "q" },
-					goto_location = "<Cr>",
-					focus_location = "o",
-					hover_symbol = "<C-space>",
-					toggle_preview = "K",
-					rename_symbol = "r",
-					code_actions = "a",
-					fold = "h",
-					unfold = "l",
-					fold_all = "W",
-					unfold_all = "E",
-					fold_reset = "R",
-				},
-				lsp_blacklist = {},
-				symbol_blacklist = {},
-				symbols = {
-					File = { icon = "📝", hl = "@text.uri" },
-					Module = { icon = "✇", hl = "@namespace" },
-					Namespace = { icon = "🔩", hl = "@namespace" },
-					Package = { icon = "🔩", hl = "@namespace" },
-					Class = { icon = "𝓒", hl = "@type" },
-					Method = { icon = "ƒ", hl = "@method" },
-					Property = { icon = "", hl = "@method" },
-					Field = { icon = "🔩", hl = "@field" },
-					Constructor = { icon = "", hl = "@constructor" },
-					Enum = { icon = "ℰ", hl = "@type" },
-					Interface = { icon = "ﰮ", hl = "@type" },
-					Function = { icon = "", hl = "@function" },
-					Variable = { icon = "", hl = "@constant" },
-					Constant = { icon = "", hl = "@constant" },
-					String = { icon = "𝓐", hl = "@string" },
-					Number = { icon = "#", hl = "@number" },
-					Boolean = { icon = "⊨", hl = "@boolean" },
-					Array = { icon = "🔩", hl = "@constant" },
-					Object = { icon = "⦿", hl = "@type" },
-					Key = { icon = "🔐", hl = "@type" },
-					Null = { icon = "NULL", hl = "@type" },
-					EnumMember = { icon = "", hl = "@field" },
-					Struct = { icon = "𝓢", hl = "@type" },
-					Event = { icon = "🗲", hl = "@type" },
-					Operator = { icon = "+", hl = "@operator" },
-					TypeParameter = { icon = "𝙏", hl = "@parameter" },
-					Component = { icon = "🔩", hl = "@function" },
-					Fragment = { icon = "🔩", hl = "@constant" },
-				},
-			})
 		end,
 	},
 
@@ -668,7 +676,7 @@ return {
 	{
 		"brenoprata10/nvim-highlight-colors",
 		config = function()
-			require("nvim-highlight-colors").setup({})
+			require("nvim-highlight-colors").setup()
 		end,
 	},
 	{ "junegunn/vim-easy-align" },

@@ -51,6 +51,7 @@ vim.opt.incsearch = true
 
 -- indent
 vim.opt.smartindent = true
+vim.opt.autoindent = true 
 
 -- case
 vim.opt.smartcase = true

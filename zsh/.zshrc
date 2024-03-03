@@ -178,7 +178,6 @@ alias gcd='cd "$(find -type d | ff)"'
 # export OPENAI_API_KEY='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'
 
 # WARN:  delete GIT_USERNAME and GIT_ACCESS_TOKEN before push repo
-
 # GIT CONF
 export GIT_USERNAME=''
 export GIT_ACCESS_TOKEN=''

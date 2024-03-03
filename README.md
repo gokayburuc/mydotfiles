@@ -1,8 +1,22 @@
 # Gokay BURUC - DotFiles
 
-Last Update : 2024-02-28 14:04
+Last Update : 2024-03-03 16:37
 
-![cover](img/dotfiles.png)
+## Screenshots 
+
+![[ss_01.png]]
+
+![[ss_02.png]]
+
+![[ss_03.png]]
+
+![[ss_04.png]]
+
+![[ss_05.png]]
+
+![[ss_06.png]]
+
+![[ss_07.png]]
 
 ## TOC - Table Of Contents 
 

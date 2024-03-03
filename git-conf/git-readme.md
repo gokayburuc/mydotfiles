@@ -1,7 +1,7 @@
 
 ## AUTOMATE YOUR GIT WORKFLOW 
 
-![git](main/img/git.jpeg) 
+![git](/img/git.jpeg) 
 
 <!-- FIXME: image links in github repo  -->
 
