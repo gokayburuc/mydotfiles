@@ -1,0 +1,9 @@
+return 	{
+		"Yazeed1s/minimal.nvim",
+		lazy = false,
+		config = function()
+			-- vim.g.minimal_transparent_background = true
+			-- vim.cmd.colorscheme("minimal")
+		end,
+	}
+

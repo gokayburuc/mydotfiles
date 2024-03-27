@@ -14,6 +14,17 @@ ls.add_snippets("lua", { s("warn", { t("-- WARN: "), i(1) }) })
 ls.add_snippets("lua", { s("warnx", { t("-- XXX: "), i(1) }) })
 ls.add_snippets("lua", { s("perf", { t("-- PERF: "), i(1) }) })
 
+-- ========================= GO ================================
+
+ls.add_snippets("go", { s("todo", { t("// TODO: "), i(1) }) })
+ls.add_snippets("go", { s("fix", { t("// FIXME: "), i(1) }) })
+ls.add_snippets("go", { s("hack", { t("// HACK: "), i(1) }) })
+ls.add_snippets("go", { s("info", { t("// INFO: "), i(1) }) })
+ls.add_snippets("go", { s("test", { t("// TEST: "), i(1) }) })
+ls.add_snippets("go", { s("warn", { t("// WARN: "), i(1) }) })
+ls.add_snippets("go", { s("warnx", { t("// XXX: "), i(1) }) })
+ls.add_snippets("go", { s("perf", { t("// PERF: "), i(1) }) })
+
 -- =========================== PYTHON ============================
 
 ls.add_snippets("python", { s("todo", { t("# TODO: "), i(1) }) })
@@ -25,8 +36,7 @@ ls.add_snippets("python", { s("warn", { t("# WARN: "), i(1) }) })
 ls.add_snippets("python", { s("warnx", { t("# XXX: "), i(1) }) })
 ls.add_snippets("python", { s("perf", { t("# PERF: "), i(1) }) })
 
-
--- ========================== JAVASCRIPT ========================= 
+-- ========================== JAVASCRIPT =========================
 
 ls.add_snippets("javascript", { s("todo", { t("// TODO: "), i(1) }) })
 ls.add_snippets("javascript", { s("fix", { t("// FIXME: "), i(1) }) })
@@ -37,9 +47,18 @@ ls.add_snippets("javascript", { s("warn", { t("// WARN: "), i(1) }) })
 ls.add_snippets("javascript", { s("warnx", { t("// XXX: "), i(1) }) })
 ls.add_snippets("javascript", { s("perf", { t("// PERF: "), i(1) }) })
 
+-- ================================ BASH ==============================
 
+ls.add_snippets("bash", { s("todo", { t("# TODO: "), i(1) }) })
+ls.add_snippets("bash", { s("fix", { t("# FIXME: "), i(1) }) })
+ls.add_snippets("bash", { s("hack", { t("# HACK: "), i(1) }) })
+ls.add_snippets("bash", { s("info", { t("# INFO: "), i(1) }) })
+ls.add_snippets("bash", { s("test", { t("# TEST: "), i(1) }) })
+ls.add_snippets("bash", { s("warn", { t("# WARN: "), i(1) }) })
+ls.add_snippets("bash", { s("warnx", { t("# XXX: "), i(1) }) })
+ls.add_snippets("bash", { s("perf", { t("# PERF: "), i(1) }) })
 
-
+--======================================================================
 
 -- multiline snippets
 -- TODO: multiline snippet ls.parser.parse_snippet method
@@ -191,4 +210,3 @@ ls.add_snippets("html", {
 		t("-->"),
 	}),
 })
-

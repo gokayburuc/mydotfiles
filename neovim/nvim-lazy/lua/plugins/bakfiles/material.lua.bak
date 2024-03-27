@@ -1,0 +1,47 @@
+return {
+	"marko-cerovac/material.nvim",
+	config = function()
+		local material = require("material")
+
+		material.setup({
+			contrast = {
+				sidebars = true,
+				floating_windows = false,
+				cursor_line = false,
+				popup_menu = true,
+				filetypes = {
+					"qf",
+				},
+			},
+			plugins = {
+				"gitsigns",
+				"nvim-cmp",
+				"nvim-tree",
+				"nvim-web-devicons",
+				"telescope",
+				"which-key",
+			},
+			styles = {
+				comments = { italic = true },
+				functions = { italic = true },
+			},
+			disable = {
+				colored_cursor = false,
+				borders = true,
+				background = true,
+				term_colors = false,
+				eob_lines = false,
+			},
+			high_visibility = {
+				lighter = false,
+				darker = true,
+			},
+
+			lualine_style = "stealth",
+			async_loading = true,
+		})
+
+		-- Apply the colorscheme
+		-- vim.cmd("colorscheme material-deep-ocean")
+	end,
+}

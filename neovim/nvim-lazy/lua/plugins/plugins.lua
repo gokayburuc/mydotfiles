@@ -1,13 +1,148 @@
 return {
-
+	{ "frazrepo/vim-rainbow" },
+	{ "luochen1990/rainbow" },
 	{
-		"Yazeed1s/minimal.nvim",
+		"stevearc/aerial.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+	{
+		"ellisonleao/carbon-now.nvim",
 		lazy = false,
+		cmd = "CarbonNow",
 		config = function()
-			-- vim.g.minimal_transparent_background = true
-			-- vim.cmd.colorscheme("minimal")
+			local carbon = require("carbon-now")
+			carbon.setup({
+				open_cmd = "chromium-browser",
+				base_url = "https://carbon.now.sh/",
+				options = {
+					font_family = "Monoid",
+					theme = "verminal",
+					bg = "midnightblue",
+					drop_shadow = true, -- true, false
+					drop_shadow_blur = "68px",
+					drop_shadow_offset_y = "20px",
+					font_size = "18px",
+					line_height = "133%",
+					line_numbers = true, -- true,false
+					titlebar = "@gokayburuc",
+					watermark = false, -- true, false
+					window_theme = "boxy", -- sharp, none, boxy, bw
+				},
+			})
 		end,
 	},
+	{
+		"maxmx03/dracula.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			local dracula = require("dracula")
+			dracula.setup({
+				transparent = true,
+				plugins = {
+					["nvim-treesitter"] = true,
+					["nvim-lspconfig"] = true,
+					["nvim-navic"] = true,
+					["nvim-cmp"] = true,
+					["indent-blankline.nvim"] = true,
+					["neo-tree.nvim"] = true,
+					["nvim-tree.lua"] = true,
+					["which-key.nvim"] = true,
+					["dashboard-nvim"] = true,
+					["gitsigns.nvim"] = true,
+					["neogit"] = true,
+					["todo-comments.nvim"] = true,
+					["lazy.nvim"] = true,
+					["telescope.nvim"] = true,
+					["noice.nvim"] = true,
+					["hop.nvim"] = true,
+					["mini.statusline"] = true,
+					["mini.tabline"] = true,
+					["mini.starter"] = true,
+					["mini.cursorword"] = true,
+					["mason"] = true,
+				},
+			})
+
+			-- vim.cmd.colorscheme("dracula")
+			vim.cmd.colorscheme("dracula-soft")
+		end,
+	},
+
+	-- {
+	-- 	"Mofiqul/dracula.nvim",
+	--
+	-- 	-- configuration
+	-- 	config = function()
+	-- 		local dracula = require("dracula")
+	-- 		dracula.setup({
+	-- 			-- customize dracula color palette
+	-- 			-- colors = {
+	-- 			-- 	bg = "#282A36",
+	-- 			-- 	fg = "#F8F8F2",
+	-- 			-- 	selection = "#44475A",
+	-- 			-- 	comment = "#6272A4",
+	-- 			-- 	red = "#FF5555",
+	-- 			-- 	orange = "#FFB86C",
+	-- 			-- 	yellow = "#F1FA8C",
+	-- 			-- 	green = "#50fa7b",
+	-- 			-- 	purple = "#BD93F9",
+	-- 			-- 	cyan = "#8BE9FD",
+	-- 			-- 	pink = "#FF79C6",
+	-- 			-- 	bright_red = "#FF6E6E",
+	-- 			-- 	bright_green = "#69FF94",
+	-- 			-- 	bright_yellow = "#FFFFA5",
+	-- 			-- 	bright_blue = "#D6ACFF",
+	-- 			-- 	bright_magenta = "#FF92DF",
+	-- 			-- 	bright_cyan = "#A4FFFF",
+	-- 			-- 	bright_white = "#FFFFFF",
+	-- 			-- 	menu = "#21222C",
+	-- 			-- 	visual = "#3E4452",
+	-- 			-- 	gutter_fg = "#4B5263",
+	-- 			-- 	nontext = "#3B4048",
+	-- 			-- 	white = "#ABB2BF",
+	-- 			-- 	black = "#191A21",
+	-- 			-- },
+	-- 			-- show the '~' characters after the end of buffers
+	-- 			-- show_end_of_buffer = true, -- default false
+	-- 			-- use transparent background
+	-- 			transparent_bg = true, -- default false
+	-- 			-- set custom lualine background color
+	-- 			-- lualine_bg_color = "#44475a", -- default nil
+	-- 			-- set italic comment
+	-- 			-- italic_comment = true, -- default false
+	-- 			-- overrides the default highlights with table see `:h synIDattr`
+	-- 			-- overrides = {},
+	-- 			-- You can use overrides as table like this
+	-- 			overrides = {
+	-- 				--   NonText = { fg = "white" }, -- set NonText fg to white
+	-- 				--   NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
+	-- 				Nothing = {}, -- clear highlight of Nothing
+	-- 			},
+	-- 			-- Or you can also use it like a function to get color from theme
+	-- 			-- overrides = function (colors)
+	-- 			--   return {
+	-- 			--     NonText = { fg = colors.white }, -- set NonText fg to white of theme
+	-- 			--   }
+	-- 			-- end,
+	-- 		})
+	--
+	-- 		require("lualine").setup({
+	-- 			options = {
+	-- 				-- ...
+	-- 				theme = "dracula-nvim",
+	-- 				-- ...
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.cmd.colorscheme("dracula")
+	-- 	end,
+	-- },
 
 	{
 		"maxmx03/solarized.nvim",
@@ -18,16 +153,16 @@ return {
 			-- default config
 			require("solarized").setup({
 				transparent = true, -- enable transparent background
-				palette = "solarized", -- or selenized
+				palette = "solarized", -- or selenized, solarized
 				styles = {
-					comments = {},
-					functions = {},
-					variables = {},
-					numbers = {},
-					constants = {},
-					parameters = {},
-					keywords = {},
-					types = {},
+					comments = { italic = true },
+					functions = { bold = true },
+					variables = { bold = true },
+					numbers = { bold = true },
+					constants = { bold = true },
+					parameters = { bold = true },
+					keywords = { bold = true },
+					types = { bold = true },
 				},
 				enables = {
 					bufferline = true,
@@ -60,56 +195,7 @@ return {
 				autocmd = false,
 			})
 
-			vim.cmd.colorscheme("solarized")
-		end,
-	},
-
-	{
-		"navarasu/onedark.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("onedark").setup({
-				-- Main options --
-				style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-				transparent = true, -- Show/hide background
-				term_colors = true, -- Change terminal color as per the selected theme style
-				ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-				cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-				-- toggle theme style ---
-				toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-				toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
-
-				-- Change code style ---
-				-- Options are italic, bold, underline, none
-				-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-				code_style = {
-					comments = "italic",
-					keywords = "none",
-					functions = "none",
-					strings = "none",
-					variables = "none",
-				},
-
-				-- Lualine options --
-				lualine = {
-					transparent = false, -- lualine center bar transparency
-				},
-
-				-- Custom Highlights --
-				colors = {}, -- Override default colors
-				highlights = {}, -- Override highlight groups
-
-				-- Plugins Config --
-				diagnostics = {
-					darker = true, -- darker colors for diagnostic
-					undercurl = true, -- use undercurl instead of underline for diagnostics
-					background = true, -- use background color for virtual text
-				},
-			})
-			-- require("onedark").load()
-			-- vim.cmd.colorscheme("onedark")
+			-- vim.cmd.colorscheme("solarized")
 		end,
 	},
 
@@ -130,85 +216,6 @@ return {
 		opts = {},
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	{
-		"marko-cerovac/material.nvim",
-		config = function()
-			local material = require("material")
-
-			material.setup({
-				contrast = {
-					sidebars = true,
-					floating_windows = false,
-					cursor_line = false,
-					popup_menu = true,
-					filetypes = {
-						"qf",
-					},
-				},
-				plugins = {
-					"gitsigns",
-					"nvim-cmp",
-					"nvim-tree",
-					"nvim-web-devicons",
-					"telescope",
-					"which-key",
-				},
-				styles = {
-					comments = { italic = true },
-					functions = { italic = true },
-				},
-				disable = {
-					colored_cursor = false,
-					borders = true,
-					background = true,
-					term_colors = false,
-					eob_lines = false,
-				},
-				high_visibility = {
-					lighter = false,
-					darker = true,
-				},
-
-				lualine_style = "stealth",
-				async_loading = true,
-			})
-
-			-- Apply the colorscheme
-			-- vim.cmd("colorscheme material-deep-ocean")
-		end,
-	},
-
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			require("gruvbox").setup({
-				terminal_colors = true, -- add neovim terminal colors
-				undercurl = true,
-				underline = true,
-				bold = true,
-				italic = {
-					strings = true,
-					emphasis = true,
-					comments = true,
-					operators = false,
-					folds = true,
-				},
-				strikethrough = true,
-				invert_selection = false,
-				invert_signs = false,
-				invert_tabline = false,
-				invert_intend_guides = false,
-				inverse = true, -- invert background for search, diffs, statuslines and errors
-				contrast = "hard", -- can be "hard", "soft" or empty string
-				palette_overrides = {},
-				overrides = {},
-				dim_inactive = false,
-				transparent_mode = true,
-			})
-			-- vim.cmd("colorscheme gruvbox")
-		end,
-	},
 
 	{
 		"aurum77/live-server.nvim",
@@ -225,6 +232,8 @@ return {
 				javascript = { "eslint_d" },
 				lua = { "luacheck" },
 				python = { "flake8" },
+				markdown = { "markdownlint" },
+				vim = { "vint" },
 			}
 		end,
 	},
@@ -254,6 +263,7 @@ return {
 			}
 
 			require("telescope").setup({
+				-- INFO: telescope symbols
 				defaults = {
 					prompt_prefix = "🔎 ",
 					selection_caret = "🔥 ",
@@ -278,6 +288,7 @@ return {
 					autocommands = opts,
 					vim_options = opts,
 				},
+				-- INFO: telescope extension configs
 				extensions = {
 					fzf = {
 						fuzzy = true,
@@ -331,6 +342,7 @@ return {
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 
+			-- INFO: snippets customization
 			require("snippets.snippets")
 			require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -381,20 +393,24 @@ return {
 
 				--source config
 				sources = cmp.config.sources({
-					{ name = "buffer", priority = 6 },
-					{ name = "luasnip", priority = 3 },
-					{ name = "nvim_lsp", priority = 1 },
-					{ name = "nvim_lua", priority = 2 },
-					{ name = "nvim_lsp_document_symbol", priority = 4 },
-					{ name = "nvim_lsp_signature_help", priority = 5 },
+					{ name = "buffer" },
+					{ name = "luasnip" },
+					{ name = "nvim_lsp" },
+					{ name = "nvim_lsp_document_symbol" },
+					{ name = "nvim_lsp_signature_help" },
+					{ name = "nvim_lua" },
+					{ name = "path" },
 				}),
 			})
 		end,
 	},
-
 	{
 		"williamboman/mason.nvim",
 		config = function()
+			local on_attach_vim = function(client)
+				require("completion").on_attach(client)
+			end
+
 			require("mason").setup({
 				ui = {
 					icons = {
@@ -414,6 +430,7 @@ return {
 			-- LUA
 			lconf.lua_ls.setup({
 				capabilities = capabilities,
+				on_attach = on_attach_vim,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -426,6 +443,7 @@ return {
 			-- GO
 			lconf.gopls.setup({
 				capabilities = capabilities,
+				on_attach = on_attach_vim,
 				settings = {
 					gopls = {
 						analyses = {
@@ -438,31 +456,43 @@ return {
 			})
 
 			-- VIM
-			lconf.vimls.setup({ capabilities = capabilities })
+			lconf.vimls.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- EMMET
-			lconf.emmet_ls.setup({ capabilities = capabilities })
+			lconf.emmet_ls.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- JAVASCRIPT
-			lconf.eslint.setup({ capabilities = capabilities })
+			lconf.eslint.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- TYPESCRIPT
-			lconf.tsserver.setup({ capabilities = capabilities })
+			lconf.tsserver.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- HTML
-			lconf.html.setup({ capabilities = capabilities })
+			lconf.html.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- CSS
-			lconf.cssls.setup({ capabilities = capabilities })
+			lconf.cssls.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- BASH
-			lconf.bashls.setup({ capabilities = capabilities })
+			lconf.bashls.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- PYTHON
-			lconf.pylsp.setup({ capabilities = capabilities })
+			lconf.pylsp.setup({ capabilities = capabilities, on_attach = on_attach_vim })
 
 			-- VIM
-			lconf.vimls.setup({ capabilities = capabilities })
+			lconf.vimls.setup({ capabilities = capabilities, on_attach = on_attach_vim })
+
+			-- RUST
+			lconf.rust_analyzer.setup({
+				capabilities = capabilities,
+				on_attach = on_attach_vim,
+				cmd = {
+					"rustup",
+					"run",
+					"stable",
+					"rust-analyzer",
+				},
+			})
 
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
@@ -497,6 +527,15 @@ return {
 					python = {
 						require("formatter.filetypes.python").autopep8,
 					},
+
+					markdown = {
+						require("formatter.filetypes.markdown").markdown_toc,
+					},
+
+					-- markdown = {
+					-- 	require("formatter.filetypes.markdown").markdown_toc,
+					-- },
+					--
 
 					-- any filetype
 					["*"] = {
@@ -571,8 +610,6 @@ return {
 					"vim",
 					"vimdoc",
 					"query",
-					"elixir",
-					"heex",
 					"javascript",
 					"html",
 				},
@@ -642,7 +679,12 @@ return {
 	},
 
 	-- harpoon
-	{ "ThePrimeagen/harpoon" },
+	{
+		"ThePrimeagen/harpoon",
+		config = function()
+			require("harpoon").setup()
+		end,
+	},
 
 	-- nvim surround
 	{
@@ -690,7 +732,94 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-		opts = {},
+		opts = {
+			plugins = {
+				marks = true, -- shows a list of your marks on ' and `
+				registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+				-- the presets plugin, adds help for a bunch of default keybindings in Neovim
+				-- No actual key bindings are created
+				spelling = {
+					enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+					suggestions = 20, -- how many suggestions should be shown in the list?
+				},
+				presets = {
+					operators = true, -- adds help for operators like d, y, ...
+					motions = true, -- adds help for motions
+					text_objects = true, -- help for text objects triggered after entering an operator
+					windows = true, -- default bindings on <c-w>
+					nav = true, -- misc bindings to work with windows
+					z = true, -- bindings for folds, spelling and others prefixed with z
+					g = true, -- bindings for prefixed with g
+				},
+			},
+			-- add operators that will trigger motion and text object completion
+			-- to enable all native operators, set the preset / operators plugin above
+			operators = { gc = "Comments" },
+			key_labels = {
+				-- override the label used to display some keys. It doesn't effect WK in any other way.
+				-- For example:
+				-- ["<space>"] = "SPC",
+				-- ["<cr>"] = "RET",
+				-- ["<tab>"] = "TAB",
+			},
+			motions = {
+				count = true,
+			},
+			icons = {
+				breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+				separator = "➜", -- symbol used between a key and it's label
+				group = "+", -- symbol prepended to a group
+			},
+			popup_mappings = {
+				scroll_down = "<c-d>", -- binding to scroll down inside the popup
+				scroll_up = "<c-u>", -- binding to scroll up inside the popup
+			},
+			window = {
+				border = "single", -- none, single, double, shadow
+				position = "bottom", -- bottom, top
+				margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]. When between 0 and 1, will be treated as a percentage of the screen size.
+				padding = { 1, 2, 1, 2 }, -- extra window padding [top, right, bottom, left]
+				winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
+				zindex = 1000, -- positive value to position WhichKey above other floating windows.
+			},
+			layout = {
+				height = { min = 4, max = 25 }, -- min and max height of the columns
+				width = { min = 20, max = 50 }, -- min and max width of the columns
+				spacing = 3, -- spacing between columns
+				align = "left", -- align columns left, center or right
+			},
+			ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+			hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "^:", "^ ", "^call ", "^lua " }, -- hide mapping boilerplate
+			show_help = true, -- show a help message in the command line for using WhichKey
+			show_keys = true, -- show the currently pressed key and its label as a message in the command line
+			triggers = "auto", -- automatically setup triggers
+			-- triggers = {"<leader>"} -- or specifiy a list manually
+			-- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
+			triggers_nowait = {
+				-- marks
+				"`",
+				"'",
+				"g`",
+				"g'",
+				-- registers
+				'"',
+				"<c-r>",
+				-- spelling
+				"z=",
+			},
+			triggers_blacklist = {
+				-- list of mode / prefixes that should never be hooked by WhichKey
+				-- this is mostly relevant for keymaps that start with a native binding
+				i = { "j", "k" },
+				v = { "j", "k" },
+			},
+			-- disable the WhichKey popup for certain buf types and file types.
+			-- Disabled by default for Telescope
+			disable = {
+				buftypes = {},
+				filetypes = {},
+			},
+		},
 	},
 
 	{

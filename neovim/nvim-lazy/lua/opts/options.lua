@@ -1,70 +1,84 @@
+local vglob = vim.g -- global options
+local vopt = vim.opt -- options
+local vwo = vim.wo  -- window options 
+
+-- syntax 
+vglob.syntax = true
+
 -- encoding
 vim.scriptencoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-vim.opt.encoding = "utf-8"
+vopt.fileencoding = "utf-8"
+vopt.encoding = "utf-8"
 
-vim.opt.title = true
+-- title
+vopt.title = true
 
 -- indent
-vim.opt.breakindent = true
-vim.opt.autoindent = true
-vim.opt.ai = true -- auto indent
-vim.opt.si = true -- smart indent
+vopt.breakindent = true
+vopt.autoindent = true
+vopt.ai = true -- auto indent
+vopt.si = true -- smart indent
 
 -- wrap
-vim.opt.wrap = true
+vopt.wrap = true
 
 -- mapleader
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vglob.mapleader = " "
+vglob.maplocalleader = " "
 
-vim.opt.backspace = "2"
-vim.opt.showcmd = true
-vim.opt.laststatus = 2
-vim.opt.autowrite = true
-vim.opt.cursorline = false
-vim.opt.autoread = true
+vopt.backspace = "2"
+vopt.showcmd = true
+vopt.laststatus = 2
+vopt.autowrite = true
+vopt.cursorline = false
+vopt.autoread = true
 
 -- use spaces for tabs and whatnot
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.shiftround = true
-vim.opt.expandtab = true
+vopt.tabstop = 4
+vopt.shiftwidth = 4
+vopt.shiftround = true
+vopt.expandtab = true
 
 -- shell options
-vim.opt.shell = "zsh"
+vopt.shell = "zsh"
 
 vim.cmd([[ set noswapfile ]])
 
 --line numbers
-vim.wo.number = true
+vwo.number = true
 
 -- Relative Numbers
-vim.wo.relativenumber = true
+vwo.relativenumber = true
 
 -- gui colors
-vim.opt.termguicolors = true
+vopt.termguicolors = true
 
 -- search
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+vopt.hlsearch = true
+vopt.incsearch = true
 
 -- indent
-vim.opt.smartindent = true
-vim.opt.autoindent = true 
+vopt.smartindent = true
+vopt.autoindent = true
 
 -- case
-vim.opt.smartcase = true
-vim.opt.ignorecase = true
+vopt.smartcase = true
+vopt.ignorecase = true
 
 -- split
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vopt.splitright = true
+vopt.splitbelow = true
 
 -- system clipboard settings
-vim.opt.clipboard:append({ "unnamedplus" })
+vopt.clipboard:append({ "unnamedplus" })
+
+-- FIXME: node_modules exclude
 
 -- wildoptions and other settings
-vim.opt.wildoptions = "pum"
-vim.opt.pumblend = 5
-vim.opt.winblend = 0
+vopt.wildoptions = "pum"
+vopt.pumblend = 5
+vopt.winblend = 0
+
+-- foldmethod 
+-- FIXME: fold method 
+vim.g.html_fold_method = 'indent'
