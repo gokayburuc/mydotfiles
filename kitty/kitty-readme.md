@@ -1,6 +1,6 @@
 # Kitty Configuration and Files
 
-![[kitty.svg]]
+![kitty-logo](../src/img/kitty.svg)
 
 ## Index
 
