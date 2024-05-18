@@ -181,8 +181,6 @@ export OPENAI_API_KEY=''
 export GIT_USERNAME=''
 export GIT_ACCESS_TOKEN=''
 
-#alternative chatgpt
-# OPENAI_API_KEY='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' echo $OPENAI_API_KEY
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -203,7 +201,7 @@ convert_webp(){
     ffmpeg -i "$1" "$2.png"
 }
 
-# ----------------- zoxide ---    
+# ----------------- zoxide -------------------------
 
 #zoxide 
 eval "$(zoxide init zsh)"
