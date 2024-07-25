@@ -12,7 +12,7 @@ return {
   opts = {
     -- Configure core features of AstroNvim
     features = {
-      large_buf = { size = 1024 * 500, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
+      large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
       autopairs = true, -- enable autopairs at start
       cmp = true, -- enable completion at start
       diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
@@ -30,11 +30,9 @@ return {
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        autoindent = true, -- autoindent
-        smartindent = true, -- smartindent
-        swapfile = false,
+        conceallevel = 1, -- sets vim.opt.conceallevel
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -45,32 +43,47 @@ return {
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
-      -- first key is the mode, n = normal mode , t = terminal mode, v = virtual mode
+      -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
 
-        -- navigate buffer tabs with `H` and `L`
-        L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        -- navigate buffer tabs
+        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- mappings seen under group name "Buffer"
-        ["<Leader>bD"] = {
+        ["<Leader>bd"] = {
           function()
             require("astroui.status.heirline").buffer_picker(
               function(bufnr) require("astrocore.buffer").close(bufnr) end
             )
           end,
-          desc = "Pick to close",
+          desc = "Close buffer from tabline",
         },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
-        ["<Leader>b"] = { desc = "Buffers" },
-        -- quick save
-        ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+        -- ["<Leader>b"] = { desc = "Buffers" },
+
+        -- setting a mapping to false will disable it
+        -- ["<C-S>"] = false,
 
         -- NOTE: todo-comments mappings
-        ["<leader>td"] = { ":TodoQuickFix keywords=TODO,FIX<cr>", desc = "Todo - QuickFix", silent = true },
-        ["<leader>ts"] = { ":TodoTelescope keywords=TODO,FIX<cr>", desc = "Todo - Telescope", silent = true },
+        ["<leader><leader>tq"] = {
+          ":TodoQuickFix<cr> ",
+          desc = "Todo - QuickFix",
+          silent = true,
+        },
+        ["<leader><leader>tt"] = {
+          ":TodoTelescope<cr>",
+          desc = "Todo - Telescope",
+          silent = true,
+        },
+        ["<leader><leader>tr"] = {
+          ":TodoTrouble<cr>",
+          desc = "Todo - Trouble",
+          silent = true,
+        },
 
         -- NOTE:  undotree
         ["<leader><leader>u"] = { ":UndotreeToggle<cr>", desc = "Undotree", silent = true },
@@ -79,28 +92,31 @@ return {
         ["<leader><leader>o"] = { ":Oil<cr>", desc = "Oil", silent = true, noremap = true },
 
         -- NOTE: harpoon (quick leap from one mark to another )
-        ["<leader><leader>a"] = {
+        ["<leader>a"] = {
           function() require("harpoon.mark").add_file() end,
           desc = "Harpoon - Add File",
           silent = true,
           noremap = true,
         },
 
-        ["<leader><leader>q"] = {
+        ---- NOTE: harpoon menu
+        ["<leader>m"] = {
           function() require("harpoon.ui").toggle_quick_menu() end,
           desc = "Harpoon - Toggle Quick Menu",
           silent = true,
           noremap = true,
         },
 
-        ["<leader><leader>n"] = {
+        -- NOTE: harpoon next
+        ["<leader>d"] = {
           function() require("harpoon.ui").nav_next() end,
           desc = "Harpoon - Nav Next",
           silent = true,
           noremap = true,
         },
 
-        ["<leader><leader>p"] = {
+        -- NOTE: harpoon Previous
+        ["<leader>s"] = {
           function() require("harpoon.ui").nav_next() end,
           desc = "Harpoon - Nav Previous",
           silent = true,
@@ -114,15 +130,24 @@ return {
           silent = true,
           noremap = true,
         },
-      },
-      t = {
-        -- setting a mapping to false will disable it
-        -- ["<esc>"] = false,
+
+        -- INFO: split resize
+        ["<M-,>"] = { "<c-w>5<" },
+        ["<M-.>"] = { "<c-w>5>" },
+        ["<M-t>"] = { "<c-w>+" },
+        ["<M-s>"] = { "<c-w>-" },
+
+        --INFO: select all
+        ["<C-a>"] = { "<Esc>gg<S-v>G", desc = "Select All" },
       },
       v = {
-
         -- NOTE: CarbonNow
-        ["<leader><leader><F12>"] = { ":CarbonNow<cr>", desc = "Carbon Now", silent = true, noremap = true },
+        ["<leader><leader><F12>"] = {
+          ":CarbonNow<cr>",
+          desc = "Carbon Now",
+          silent = true,
+          noremap = true,
+        },
       },
     },
   },

@@ -17,6 +17,3 @@ end
 
 require "lazy_setup"
 require "polish"
-
--- CUSTOM SNIPPETS
-require "snippets.mysnips"
