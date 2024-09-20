@@ -23,11 +23,11 @@ return {
 
     log_level = vim.log.levels.INFO,
 
-    notes_subdir = "inbox",
+    notes_subdir = "00_inbox",
     new_notes_location = "notes_subdir",
 
     daily_notes = {
-      folder = "journal",
+      folder = "01_logs",
       date_format = "%Y-%m-%d",
       alias_format = "%B %-d, %Y",
       default_tags = { "journal", "daily", "daily-notes" },
@@ -38,8 +38,8 @@ return {
       min_chars = 2,
     },
     templates = {
-      subdir = "my-templates",
-      -- folder = "my-templates",
+      subdir = "02_templates/neovim-obsidian-templates",
+      folder = "02_templates/neovim-obsidian-templates",
       date_format = "%Y-%m-%d-%a",
       time_format = "%H:%M",
     },

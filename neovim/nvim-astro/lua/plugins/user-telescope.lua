@@ -4,6 +4,7 @@ return {
     require("telescope").setup {
       defaults = {
         path_display = { "shorten" },
+        find_command = { "rg", "--smart-case" },
         file_ignore_patterns = {
           "node_modules/",
           ".next/",
@@ -24,21 +25,21 @@ return {
           "--glob",
           "!.git*",
         },
-        prompt_prefix = "🔭 ",
-        selection_caret = "🌟 ",
-        entry_prefix = "🌠 ",
+        prompt_prefix = "🔍 ",
+        selection_caret = "⚡ ",
+        entry_prefix = "🔌 ",
 
         top_pane = {
-          height = 25,
-          preview_cutoff = 120,
-          prompt_position = "top",
+          -- height = 25,
+          -- preview_cutoff = 120,
+          -- prompt_position = "top",
         },
         layout_strategy = "horizontal",
         layout_config = {
-          height = 0.95,
-          prompt_position = "top",
-          scroll_speed = 5,
-          width = 0.95,
+          -- height = 0.95,
+          -- prompt_position = "top",
+          -- scroll_speed = 5,
+          -- width = 0.95,
         },
       },
       extensions = {
@@ -53,23 +54,38 @@ return {
       pickers = {
         find_files = {
           find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+          theme = "ivy", -- default, dropdown, ivy
         },
         live_grep = {
+          theme = "ivy",
           find_command = {
             "rg",
             "--smart-case",
           },
         },
         current_buffer_fuzzy_find = {
-          find_command = { "rg", "--smart-case" },
+          find_command = { "rg" },
+          theme = "ivy",
         },
         grep_string = {
-          find_command = { "rg", "--smart-case" },
+          find_command = { "rg" },
+          theme = "ivy",
+        },
+        help_tags = {
+          find_command = { "rg" },
+          theme = "ivy",
+        },
+        lsp_document_symbols = {
+          find_command = { "rg" },
+        },
+        man_pages = {
+          find_command = { "rg" },
+          theme = "ivy",
         },
       },
     }
 
-    require("telescope").load_extension "harpoon"
+    require("telescope").load_extension "lazygit"
     require("telescope").load_extension "fzf"
   end,
 }

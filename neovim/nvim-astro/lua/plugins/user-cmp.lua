@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 return { -- override nvim-cmp plugin
   "hrsh7th/nvim-cmp",
   -- override the options table that is used in the `require("cmp").setup()` call
@@ -11,11 +13,10 @@ return { -- override nvim-cmp plugin
     local cmp = require "cmp"
     -- modify the sources part of the options table
     opts.sources = cmp.config.sources {
-      { name = "nvim_lsp", priority = 1000, max_item_count = 5 },
-      { name = "luasnip", priority = 750, max_item_count = 3 },
+      { name = "nvim_lsp" },
+      { name = "luasnip" }, -- priority = 750
       {
         name = "buffer",
-        priority = 500,
         option = {
           get_bufnrs = function() return vim.api.nvim_list_bufs() end,
         },
@@ -55,5 +56,25 @@ return { -- override nvim-cmp plugin
         async_budget = 3,
       },
     }
+    cmp.setup {
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+    }
+
+    -- NOTE : file specific configurations
+    cmp.setup.filetype({ "markdown", "help" }, {
+      sources = {
+        { name = "path" },
+        { name = "buffer" },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "emoji" },
+      },
+      window = {
+        -- documentation = cmp.config.disable,
+      },
+    })
   end,
 }

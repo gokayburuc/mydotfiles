@@ -6,7 +6,6 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function() require("lualine").setup {} end,
   },
-  { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   {
     "ellisonleao/carbon-now.nvim",
     lazy = true,
@@ -37,8 +36,6 @@ return {
     "brenoprata10/nvim-highlight-colors",
     config = function() require("nvim-highlight-colors").setup {} end,
   },
-  { "wakatime/vim-wakatime", lazy = false },
-  { "mechatroner/rainbow_csv" },
   {
     "kdheepak/lazygit.nvim",
     cmd = {
@@ -59,23 +56,6 @@ return {
     },
   },
   {
-    "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
-      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    },
-    cmd = {
-      "DBUI",
-      "DBUIToggle",
-      "DBUIAddConnection",
-      "DBUIFindBuffer",
-    },
-    init = function()
-      -- Your DBUI configuration
-      vim.g.db_ui_use_nerd_fonts = 1
-    end,
-  },
-  {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
@@ -85,7 +65,6 @@ return {
       }
     end,
   },
-  { "richardbizik/nvim-toc", config = function() require("nvim-toc").setup {} end },
   {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -124,37 +103,4 @@ return {
     },
   },
   { "junegunn/fzf", build = "./install --bin" },
-  {
-    "folke/zen-mode.nvim",
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
-  {
-    "abel3t/rainbow-brackets.nvim",
-    config = function()
-      require("nvim-treesitter.configs").setup {
-        highlight = {},
-        rainbow = {
-          enable = true,
-          -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-          max_file_lines = nil, -- Do not enable for files with more than n lines, int
-          -- colors = {}, -- table of hex strings
-          -- termcolors = {} -- table of colour name strings
-        },
-      }
-    end,
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {},
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  },
 }

@@ -27,12 +27,28 @@ return {
     -- vim options can be configured here
     options = {
       opt = { -- vim.opt.<key>
-        relativenumber = true, -- sets vim.opt.relativenumber
-        number = true, -- sets vim.opt.number
-        spell = false, -- sets vim.opt.spell
-        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-        wrap = false, -- sets vim.opt.wrap
+
+        -- colorcolumn = "80", -- sets vim.opt.colorcolumn
+        autoindent = true, --sets vim.opt.autoindent
+        backup = false, -- sets vim.opt.backup
         conceallevel = 1, -- sets vim.opt.conceallevel
+        cursorcolumn = false, -- sets vim.opt.cursorcolumn
+        cursorline = false, -- sets vim.opt.cursorline
+        incsearch = true, -- sets vim.opt.incsearch
+        number = true, -- sets vim.opt.number
+        relativenumber = true, -- sets vim.opt.relativenumber
+        signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        smartindent = true, -- sets vim.opt.smartindent
+        spell = false, -- sets vim.opt.spell
+        swapfile = false, -- sets vim.opt.swapfile
+        termguicolors = true, --- sets vim.opt.termguicolors
+        wildmenu = true, -- sets vim.opt.wildmenu
+        wildoptions = "pum", -- sets vim.opt.wildoptions
+        winblend = 10, -- sets vim.opt.winblend  : Transparency for float windows
+        wrap = false, -- sets vim.opt.wrap
+        writebackup = false, -- sets vim.opt.writebackup
+        smartcase = true, -- sets vim.opt.smartcase
+        ignorecase = true, -- sets vim.opt.ignorecase
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -68,60 +84,54 @@ return {
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
 
-        -- NOTE: todo-comments mappings
-        ["<leader><leader>tq"] = {
-          ":TodoQuickFix<cr> ",
-          desc = "Todo - QuickFix",
+        -- FIX: todo trouble fix
+        -- NOTE: todo - fix
+        ["<leader><leader>tf"] = {
+          ":Telescope todo-comments keywords=FIX,FIXME<cr>",
+          desc = "Todo Telescope - FIX",
           silent = true,
+          noremap = true,
         },
+
+        -- FIX: todo trouble todo
+        -- NOTE: todo - todo
         ["<leader><leader>tt"] = {
-          ":TodoTelescope<cr>",
-          desc = "Todo - Telescope",
+          ":Telescope todo-comments keywords=TODO<cr>",
+          desc = "Todo Telescope - TODO",
           silent = true,
+          noremap = true,
         },
-        ["<leader><leader>tr"] = {
-          ":TodoTrouble<cr>",
-          desc = "Todo - Trouble",
+        -- FIX: todo trouble - todo
+        -- NOTE: todo - note
+        ["<leader><leader>tn"] = {
+          ":Telescope todo-comments keywords=NOTE,INFO<cr>",
+          desc = "Todo Telescope - NOTE,INFO",
           silent = true,
+          noremap = true,
+        },
+
+        -- NOTE: todo - warn
+        ["<leader><leader>tw"] = {
+          ":Telescope todo-comments keywords=WARN<cr>",
+          desc = "Todo Telescope - WARN",
+          silent = true,
+          noremap = true,
+        },
+
+        -- INFO:  Trouble todo filter = {tag = {TODO,FIX,FIXME}}
+        ["<leader><leader>tr"] = {
+          ":Trouble todo filter = {tag = {TODO,FIX,FIXME}}",
+          desc = "Todo Trouble - TODO,FIX",
+          silent = true,
+          noremap = true,
         },
 
         -- NOTE:  undotree
         ["<leader><leader>u"] = { ":UndotreeToggle<cr>", desc = "Undotree", silent = true },
 
+        --FIX: change oil keyword
         -- NOTE: Oil (better explorer)
         ["<leader><leader>o"] = { ":Oil<cr>", desc = "Oil", silent = true, noremap = true },
-
-        -- NOTE: harpoon (quick leap from one mark to another )
-        ["<leader>a"] = {
-          function() require("harpoon.mark").add_file() end,
-          desc = "Harpoon - Add File",
-          silent = true,
-          noremap = true,
-        },
-
-        ---- NOTE: harpoon menu
-        ["<leader>m"] = {
-          function() require("harpoon.ui").toggle_quick_menu() end,
-          desc = "Harpoon - Toggle Quick Menu",
-          silent = true,
-          noremap = true,
-        },
-
-        -- NOTE: harpoon next
-        ["<leader>d"] = {
-          function() require("harpoon.ui").nav_next() end,
-          desc = "Harpoon - Nav Next",
-          silent = true,
-          noremap = true,
-        },
-
-        -- NOTE: harpoon Previous
-        ["<leader>s"] = {
-          function() require("harpoon.ui").nav_next() end,
-          desc = "Harpoon - Nav Previous",
-          silent = true,
-          noremap = true,
-        },
 
         -- NOTE : TELESCOPE - current_buffer_fuzzy_find
         ["<leader>fz"] = {
@@ -138,7 +148,15 @@ return {
         ["<M-s>"] = { "<c-w>-" },
 
         --INFO: select all
-        ["<C-a>"] = { "<Esc>gg<S-v>G", desc = "Select All" },
+        ["<leader><leader>ca"] = { "<Esc>gg<S-v>G<CR>", desc = "Select All" },
+
+        -- INFO: neotree
+        ["<leader><leader>e"] = {
+          "<Esc>:Neotree position=float<CR>",
+          desc = "Neotree - Float",
+          noremap = true,
+          silent = true,
+        },
       },
       v = {
         -- NOTE: CarbonNow
