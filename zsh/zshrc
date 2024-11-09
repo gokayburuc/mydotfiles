@@ -1,143 +1,155 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
+# Enable Powerlevel10k instant prompt. should stay close to the top of ~/.zshrc.
+# initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${xdg_cache_home:-$home/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${xdg_cache_home:-$home/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# if you come from bash you might have to change your $path.
+# export path=$home/bin:/usr/local/bin:$path
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# path to your oh-my-zsh installation.
+export zsh="$home/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
+# set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="gentoo" # set by `omz`
+# to know which specific one was loaded, run: echo $random_theme
+# see https://github.com/ohmyzsh/ohmyzsh/wiki/themes
+zsh_theme="powerlevel10k/powerlevel10k" # set by `omz`
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# set list of themes to pick from when loading at random
+# setting this variable when zsh_theme=random will cause zsh to load
+# a theme from this variable instead of looking in $zsh/themes/
+# if set to an empty array, this variable will have no effect.
+# zsh_theme_random_candidates=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# uncomment the following line to use case-sensitive completion.
+# case_sensitive="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# uncomment the following line to use hyphen-insensitive completion.
+# case-sensitive completion must be off. _ and - will be interchangeable.
+# hyphen_insensitive="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
+# uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic update
 zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-# Uncomment the following line to change how often to auto-update (in days).
+# uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# uncomment the following line if pasting urls and other text is messed up.
+# disable_magic_functions="true"
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# uncomment the following line to disable colors in ls.
+# disable_ls_colors="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# uncomment the following line to disable auto-setting terminal title.
+# disable_auto_title="true"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# uncomment the following line to enable command auto-correction.
+enable_correction="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+# uncomment the following line to display red dots whilst waiting for completion.
+# you can also set it to another string to have that shown instead of the default red dots.
+# e.g. completion_waiting_dots="%f{yellow}waiting...%f"
+# caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# completion_waiting_dots="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
+# uncomment the following line if you want to disable marking untracked files
+# under vcs as dirty. this makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+disable_untracked_files_dirty="true"
 
-# Uncomment the following line if you want to change the command execution time
+# uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# You can set one of the optional three formats:
+# you can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="mm/dd/yyyy"
+hist_stamps="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# would you like to use another custom folder than $zsh/custom?
+# zsh_custom=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=( fzf tmux zoxide zsh-completions zsh-autosuggestions zsh-syntax-highlighting aliases)
+# which plugins would you like to load?
+# standard plugins can be found in $zsh/plugins/
+# custom plugins may be added to $zsh_custom/plugins/
+# example format: plugins=(rails git textmate ruby lighthouse)
+# add wisely, as too many plugins slow down shell startup.
+plugins=(
+  aliases
+  fzf
+  kitty
+  tmux
+  tmux-cssh
+  tmuxinator
+  vim-interaction
+  zoxide
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting
+)
 
 # nvim path 
-export PATH="$PATH:$HOME/nvim-linux64/bin/nvim"
+export path="$path:$home/nvim-linux64/bin/nvim"
 
-source $ZSH/oh-my-zsh.sh
+# source the omz at shell initiation
+source $zsh/oh-my-zsh.sh
 
-# User configuration
+# user configuration
+# export manpath="/usr/local/man:$manpath"
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# you may need to manually set your language environment
+export lang=en_us.utf-8
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='nvim'
+# preferred editor for local and remote sessions
+if [[ -n $ssh_connection ]]; then
+    export editor='nvim'
 else
-    export EDITOR='vi'
+    export editor='vi'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# compilation flags
+# export archflags="-arch x86_64"
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export nvm_dir="$home/.nvm"
+[ -s "$nvm_dir/nvm.sh" ] && \. "$nvm_dir/nvm.sh"  # this loads nvm
+[ -s "$nvm_dir/bash_completion" ] && \. "$nvm_dir/bash_completion"  # this loads nvm bash_completion
 
 # go setup
-export PATH=$PATH:/usr/local/go/bin
+export path=$path:/usr/local/go/bin
 
 # most
-export PAGER="most"
+export pager="most"
 
 
 # extended glob and null glob 
 setopt extended_glob null_glob
 
 
-# ============================= ALIASES ===============================
-# INFO: Aliases 
+# ============================= aliases ===============================
+# info: aliases 
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
+# set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the zsh_custom folder.
+# for a full list of active aliases, run `alias`.
 #
-# Example aliases
+# example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # zsh conf 
 alias zconf="nvim ~/.zshrc"
-alias zs='source $HOME/.zshrc'
+alias zs='source $home/.zshrc'
 
 # kitty conf 
 alias kconf="nvim /home/gokayburuc/.config/kitty/kitty.conf"
 
 # fish conf
-alias fconf="nvim $HOME/.config/fish/config.fish"
+alias fconf="nvim $home/.config/fish/config.fish"
 
 # tmux shortcuts 
 alias tconf="nvim ~/.tmux.conf"
@@ -146,6 +158,7 @@ alias tn="tmux new"
 alias ta="tmux attach-session"
 alias trw="tmux rename-window"
 alias trs="tmux rename-session"
+alias tsw="tmux splitw"
 
 # app operations
 alias app_i="sudo apt install"
@@ -153,12 +166,12 @@ alias app_s="sudo apt search"
 alias app_r="sudo apt remove"
 
 # system operations
-alias sys_fu="sudo apt update && sudo apt upgrade && sudo apt autoclean && sudo apt autoremove && sudo apt autopurge"
-alias sys_cl="sudo apt autoclean && sudo apt autoremove && sudo apt autopurge"
+alias sfu="sudo apt update && sudo apt upgrade && sudo apt autoclean && sudo apt autoremove && sudo apt autopurge"
+alias scl="sudo apt autoclean && sudo apt autoremove && sudo apt autopurge"
 
 # flat
-alias flat_r="flatpak remove"
-alias flat_i="flatpak install"
+alias flatr="flatpak remove"
+alias flati="flatpak install"
 
 # lsd
 alias ls='lsd'
@@ -168,11 +181,9 @@ alias lsa="lsd -a"
 alias zpc="tar czf"
 alias zpx="tar xvf"
 
-# sys maintanence 
-alias sup="sudo apt update && sudo apt full-upgrade && sudo apt autoclean && sudo apt autopurge"
 
 # listen music 
-alias lmusic='cd ~/Music/ && rg --files --glob "*.mp3" | fzf --multi --reverse --prompt="Song: " | xargs mpv --audio-display=no' 
+alias lmusic='cd ~/music/ && rg --files --glob "*.mp3" | fzf --multi --reverse --prompt="song: " | xargs mpv --audio-display=no' 
 
 # sys update 
 alias syu="sudo apt update && sudo apt upgrade && sudo apt autoclean && sudo apt autopurge && sudo apt autoremove"
@@ -184,16 +195,39 @@ alias ahref='lynx -dump -nonumbers -list-only'
 alias fsize="du -had1 | sort -hr"
 
 ## foldershortcuts 
-alias ob="cd /$HOME/Documents/workspace/static_website/hugo/gokayburuc_weblog/"
-alias og="cd /$HOME/Documents/workspace/static_website/mdbook/golang_cookbook/"
-alias odc="cd /$HOME/Documents/"
-alias ol="cd /$HOME/Documents/logseq-logs/"
-alias ov="cd /$HOME/Documents/vaults/secondbrain/"
-alias ow="cd /$HOME/Documents/workspace"
-alias ok="cd /$HOME/.config/kitty/"
-alias oc="cd /$HOME/.config/nvim/"
-alias odw="cd /$HOME/Downloads/"
-alias oa="cd /$HOME/Documents/ankiweb/"
+alias ob="cd /$home/documents/workspace/static_website/hugo/gokayburuc_weblog/"
+alias og="cd /$home/documents/workspace/static_website/mdbook/golang_cookbook/"
+alias ol="cd /$home/documents/lyrics/"
+alias ov="cd /$home/documents/vaults/"
+alias ow="cd /$home/documents/workspace"
+alias oc="cd /$home/.config/nvim/"
+alias oa="cd /$home/documents/ankiweb/"
+alias ot="cd /$home/downloads/telegram\ desktop"
+
+# fd 
+fdm(){
+  md "$2" # create folder using mkdir -p 
+  fd "$1" --exec mv {} "$2" \;
+}
+
+## vault management 
+nn() {
+  # go to programming directory
+  cd "$home/documents/vaults/programming/00-inbox/" || return
+
+  # get current date
+  current_date=$(date +"%y-%m-%d")
+
+  # create filename
+  filename="${current_date}_$1.md"
+
+  # create the file
+  touch "$filename"
+
+  # open the created file with nvim
+  nvim "$filename"
+}
+
 
 # bat 
 alias bat="bat -pp"
@@ -207,41 +241,47 @@ alias lzd='lazydocker'
 # brightness - reduce the brightness
 alias loff="sudo brightnessctl set 75%"
 
-# FLATPAK runners 
-alias obsidian='flatpak run md.obsidian.Obsidian'
+# flatpak runners 
+alias obsidian='flatpak run md.obsidian.obsidian'
 alias minder='flatpak run com.github.phase1geo.minder'
 
-# WARN: use this to hide api keys 
-# get keys from external file 
+# warn: use this to hide api keys 
+# info: get keys from external file 
 source ~/.keys.sh
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 # zoxide
 eval "$(zoxide init zsh)"
 
-#=============================== CUSTOM FUNCTIONS =============================== 
+#=============================== custom functions =============================== 
 
-# NOTE: LEAP INTO ANY FILE 
+# note: leap into any file 
 
-leap() {
-  fd --hidden --follow | fzf --reverse --prompt="Filename: " | xargs nvim
+oo() {
+  fd --hidden --follow | fzf --reverse --prompt="filename: " | xargs nvim
+}
+
+# note:  neovide 
+
+oov(){
+
+  fd --hidden --follow | fzf --reverse --prompt="filename: " | xargs neovide
 }
 
 
 
-## INFO: FFMPEG CONVERTER
+
+
+## info: ffmpeg converter
 convert_webp() {
   for i in *
   do
-    ## INFO: if extension is sh then do this
+    ## info: if extension is sh then do this
     if [[ "${i##*.}" == "webp" ]]; then
-      echo "PDF FILE => $i"
-      # FIX: show filename ,
+      echo "pdf file => $i"
+      # fix: show filename ,
       filename="${i%.*}"
-      # FIX: show Extension 
+      # fix: show extension 
       extension="${i##*.}"
 
       ## webp converter 
@@ -254,7 +294,7 @@ convert_webp() {
   }
 
 
-## INFO: filename converter 
+## info: filename converter 
 
 fcon ()
 {
@@ -264,12 +304,12 @@ for i in $(rg --files); do
   echo "$new"
 
   mv "$i" "$new" 
-  echo "Rename: '$i' -> '$new' "
+  echo "rename: '$i' -> '$new' "
 
 done
 }
 
-## INFO: classify 
+## info: classify 
 
 folderput(){
   # query
@@ -282,42 +322,91 @@ folderput(){
   fd "$query" --exec mv {} $foldername \;
 }
 
-# NOTE: vault new note 
-
+# note: vault new note 
 vn(){
   ov  # open vault
   local filename="$1"
   if [[ -z "$filename" ]]; then
-    echo "Usage: vn <filename>"
+    echo "usage: vn <filename>"
     return 1
   fi
   nvim "00_inbox/${filename}.md" # enter file-name and directly start writing 
 }
 
-# path 
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/Documents/workspace/bash/:$PATH"
+empty-cache(){
+  # sudo sh -c 'echo 1 >  /proc/sys/vm/drop_caches' # to clear pagecache only
+  # sudo sh -c 'echo 2 >  /proc/sys/vm/drop_caches' # to clear dentries and inodes
+  sudo sh -c 'echo 3 >  /proc/sys/vm/drop_caches' # to clear pagecache, dentries and inodes
+  # sudo h -c 'echo 1 > /proc/sys/vm/drop_caches'  # clearing buffer/cache in linux
+  sudo sync 
+}
 
-## Elixir Kiex Path 
-[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
+# fix: how to use | in bash functions 
+
+rgf() {
+  rg --files | rg "$1" --smart-case
+}
+
+
+# path 
+export path="$home/.local/bin:$path"
+export path="$home/documents/workspace/bash/:$path"
+
+## elixir kiex path 
+[[ -s "$home/.kiex/scripts/kiex" ]] && source "$home/.kiex/scripts/kiex"
 
 # pnpm
-export PNPM_HOME="/home/gokayburuc/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+export pnpm_home="/home/gokayburuc/.local/share/pnpm"
+case ":$path:" in
+  *":$pnpm_home:"*) ;;
+  *) export path="$pnpm_home:$path" ;;
 esac
 # pnpm end
 
-# INFO: rg & fzf 
+# info: rg & fzf 
 # if type rg &> /dev/null; then
-#   export FZF_DEFAULT_COMMAND='rg --files'
-#   export FZF_DEFAULT_OPTS='-m --reverse --height 50% --border '
+#   export fzf_default_command='rg --files'
+#   export fzf_default_opts='-m --reverse --height 50% --border '
 # fi
 
 
-# INFO fzf & fd 
+# --------------- fzf gruvbox ---------------------
+
+local color00='#32302f'
+local color01='#3c3836'
+local color02='#504945'
+local color03='#665c54'
+local color04='#bdae93'
+local color05='#d5c4a1'
+local color06='#ebdbb2'
+local color07='#fbf1c7'
+local color08='#fb4934'
+local color09='#fe8019'
+local color0a='#fabd2f'
+local color0b='#b8bb26'
+local color0c='#8ec07c'
+local color0d='#83a598'
+local color0e='#d3869b'
+local color0f='#d65d0e'
+
+export fzf_default_opts="$fzf_default_opts"\
+" --color=bg+:$color01,bg:$color00,spinner:$color0c,hl:$color0d"\
+" --color=fg:$color04,header:$color0d,info:$color0a,pointer:$color0c"\
+" --color=marker:$color0c,fg+:$color06,prompt:$color0a,hl+:$color0d"
+
+# fix:  fzf kanagawa colors 
+
+
+# info fzf & fd 
 if type fd &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='fd'
-  export FZF_DEFAULT_OPTS='-m --reverse --height 50% --border '
+  export fzf_default_command='fd'
+  export fzf_default_opts='-m --reverse --height 50% --border '
 fi
+
+# neovide path 
+export path="$home/.cargo/bin:$path"
+export path="$home/snap/neovide:$path"
+
+# to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
