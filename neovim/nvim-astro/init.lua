@@ -17,3 +17,39 @@ end
 
 require "lazy_setup"
 require "polish"
+
+-- NOTE :neovide configs
+
+if vim.g.neovide then
+  -- ==================== Font Configuration ====================
+  vim.opt.guifont = "FiraCode Nerd Font:h13" -- Primary font for Neovide UI
+  -- vim.o.guifont = "JetBrains Mono:h10"      -- Alternate font
+  -- vim.o.guifont = "Source Code Pro:h14"     -- Another font option
+  vim.opt.linespace = 0 -- Set space between lines to 0 for compact appearance
+  vim.g.neovide_text_gamma = 1.5
+  vim.g.neovide_text_contrast = 1.0
+
+  -- ==================== Cursor Effects ====================
+  vim.g.neovide_cursor_vfx_mode = "railgun" -- Apply visual cursor effect (e.g., pixiedust)
+  vim.g.neovide_cursor_trail_size = 0 -- Disable cursor trail size
+  vim.g.neovide_cursor_antialiasing = true -- Disable cursor antialiasing for performance
+  vim.g.neovide_cursor_animate_command_line = true -- Disable cursor animation in command-line mode
+  vim.g.neovide_hide_mouse_when_typing = false -- Show mouse even while typing
+
+  -- ==================== Display and Scaling ====================
+  vim.g.neovide_fullscreen = false -- Launch Neovide in fullscreen mode
+  vim.g.neovide_no_idle = true -- Disable idle rendering to boost performance
+  vim.g.neovide_scale_factor = 1.0 -- Scaling factor for Neovide window size
+  vim.g.neovide_transparency = 0.9 -- Set transparency level to 90%
+  vim.g.transparency = 0.9 -- Optional additional transparency setting
+  vim.g.neovide_theme = "auto" -- Auto-switch Neovide theme based on system theme
+
+  -- ==================== Refresh and Animation ====================
+  vim.g.neovide_refresh_rate = 60 -- Set screen refresh rate to 60Hz
+  vim.g.neovide_scroll_animation_length = 0.3 -- Control scroll animation length (in seconds)
+  vim.g.neovide_scroll_animation_far_lines = 1 -- Smooth scroll for far lines
+
+  -- ========================= Helper ==================================
+  local alpha = function() return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8))) end
+  vim.g.neovide_background_color = "#282828" .. alpha()
+end

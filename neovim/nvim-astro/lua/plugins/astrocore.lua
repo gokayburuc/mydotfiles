@@ -31,13 +31,16 @@ return {
         -- colorcolumn = "80", -- sets vim.opt.colorcolumn
         autoindent = true, --sets vim.opt.autoindent
         backup = false, -- sets vim.opt.backup
-        conceallevel = 1, -- sets vim.opt.conceallevel
+        conceallevel = 2, -- sets vim.opt.conceallevel
         cursorcolumn = false, -- sets vim.opt.cursorcolumn
         cursorline = false, -- sets vim.opt.cursorline
+        hlsearch = true, -- sets vim.opt.hlsearch
+        ignorecase = true, -- sets vim.opt.ignorecase
         incsearch = true, -- sets vim.opt.incsearch
         number = true, -- sets vim.opt.number
         relativenumber = true, -- sets vim.opt.relativenumber
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
+        smartcase = true, -- sets vim.opt.smartcase
         smartindent = true, -- sets vim.opt.smartindent
         spell = false, -- sets vim.opt.spell
         swapfile = false, -- sets vim.opt.swapfile
@@ -47,8 +50,6 @@ return {
         winblend = 10, -- sets vim.opt.winblend  : Transparency for float windows
         wrap = false, -- sets vim.opt.wrap
         writebackup = false, -- sets vim.opt.writebackup
-        smartcase = true, -- sets vim.opt.smartcase
-        ignorecase = true, -- sets vim.opt.ignorecase
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -120,7 +121,7 @@ return {
 
         -- INFO:  Trouble todo filter = {tag = {TODO,FIX,FIXME}}
         ["<leader><leader>tr"] = {
-          ":Trouble todo filter = {tag = {TODO,FIX,FIXME}}",
+          ":Trouble todo filter = {tag = {TODO,FIX,FIXME}} <CR>",
           desc = "Todo Trouble - TODO,FIX",
           silent = true,
           noremap = true,
@@ -150,12 +151,48 @@ return {
         --INFO: select all
         ["<leader><leader>ca"] = { "<Esc>gg<S-v>G<CR>", desc = "Select All" },
 
-        -- INFO: neotree
-        ["<leader><leader>e"] = {
-          "<Esc>:Neotree position=float<CR>",
-          desc = "Neotree - Float",
+        -- INFO: harpoon
+        -- Harpoon : Quick Menu
+        ["<leader>h"] = {
+          ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
           noremap = true,
           silent = true,
+          desc = "Harpoon - Quick Menu",
+        },
+        -- Harpoon : Add
+        ["<leader>hb"] = {
+          ':lua require("harpoon.mark").add_file()<CR>',
+          noremap = true,
+          silent = true,
+          desc = "Harpoon - Add (Bookmark)",
+        },
+        -- Harpoon : Previous
+        ["<leader><leader>1"] = {
+          ':lua require("harpoon.ui").nav_prev()<CR>',
+          noremap = true,
+          silent = true,
+          desc = "Harpoon - Previous ",
+        },
+        -- Harpoon : Next
+        ["<leader><leader>2"] = {
+          ':lua require("harpoon.ui").nav_next()<CR>',
+          noremap = true,
+          silent = true,
+          desc = "Harpoon - Next ",
+        },
+        -- Harpoon : Navigage 1
+        -- Harpoon : Navigage 2
+        -- Harpoon : Navigage 3
+        -- Harpoon : Navigage 4
+        -- Harpoon : Navigage 5
+        --
+        --
+        -- Telescope Emoji
+        ["<leader><leader>te"] = {
+          ":Telescope emoji<cr>",
+          noremap = true,
+          silent = true,
+          desc = "Telescope - Emoji ",
         },
       },
       v = {

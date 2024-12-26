@@ -11,10 +11,13 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "citruszest",
+    colorscheme = "catppuccin",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = {
+        TreesitterContext = { fg = "black", bg = "black" },
+        TreesitterContextBottom = { bg = "black" },
+        TreesitterContextSeperator = { bg = "#000000" },
         -- Normal = { bg = "none" },
         -- SignColumn = { bg = "none" },
         -- FoldColumn = { bg = "none" },
@@ -74,7 +77,7 @@ return {
         -- PmenuSel = { bg = "none" },
         -- PmenuSbar = { bg = "none" },
         -- PmenuThumb = { bg = "none" },
-        -- -- Notifications
+        -- Notifications
         -- NotifyINFOBody = { bg = "none" },
         -- NotifyWARNBody = { bg = "none" },
         -- NotifyERRORBody = { bg = "none" },
